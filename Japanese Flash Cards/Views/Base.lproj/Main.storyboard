@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wrN-lW-rb5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="KFT-Ev-BAs">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zT3-ar-7CF" userLabel="Question View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="448"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6n-WG-w9b" userLabel="Question Label">
-                                                <rect key="frame" x="186.5" y="194.5" width="41.5" height="20.5"/>
+                                                <rect key="frame" x="166.5" y="214" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -35,28 +35,28 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-H3-wwb" userLabel="Answers View">
-                                        <rect key="frame" x="0.0" y="409" width="414" height="409"/>
+                                        <rect key="frame" x="0.0" y="449" width="374" height="369"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlW-Mm-N5A" userLabel="Button A">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="92.5"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-bd-s3r" userLabel="Button B">
-                                                <rect key="frame" x="0.0" y="102.5" width="414" height="102"/>
+                                                <rect key="frame" x="0.0" y="92.5" width="374" height="92"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-22-i5a" userLabel="Button C">
-                                                <rect key="frame" x="0.0" y="204.5" width="414" height="102.5"/>
+                                                <rect key="frame" x="0.0" y="184.5" width="374" height="92.5"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trT-My-Y6D" userLabel="Button D">
-                                                <rect key="frame" x="0.0" y="307" width="414" height="102"/>
+                                                <rect key="frame" x="0.0" y="277" width="374" height="92"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                                 </state>
@@ -69,10 +69,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wrN-lW-rb5" secondAttribute="bottom" id="1nd-hn-t1O"/>
-                            <constraint firstItem="wrN-lW-rb5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LVK-Jg-ZoI"/>
-                            <constraint firstItem="wrN-lW-rb5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sOR-tg-a1c"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wrN-lW-rb5" secondAttribute="trailing" id="u3q-fw-K1a"/>
+                            <constraint firstItem="KFT-Ev-BAs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TYi-Fm-n14"/>
+                            <constraint firstItem="KFT-Ev-BAs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XXR-5e-12m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KFT-Ev-BAs" secondAttribute="bottom" id="ncf-ic-Qeg"/>
+                            <constraint firstItem="KFT-Ev-BAs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tmB-0y-PKU"/>
                         </constraints>
                     </view>
                 </viewController>
