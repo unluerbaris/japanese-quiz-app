@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E9B12506268EB48E00994623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B12505268EB48E00994623 /* AppDelegate.swift */; };
 		E9B12508268EB48E00994623 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B12507268EB48E00994623 /* SceneDelegate.swift */; };
-		E9B1250A268EB48E00994623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B12509268EB48E00994623 /* ViewController.swift */; };
+		E9B1250A268EB48E00994623 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B12509268EB48E00994623 /* QuizViewController.swift */; };
 		E9B1250D268EB48E00994623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B1250B268EB48E00994623 /* Main.storyboard */; };
 		E9B1250F268EB48F00994623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B1250E268EB48F00994623 /* Assets.xcassets */; };
 		E9B12512268EB48F00994623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B12510268EB48F00994623 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		E9B12502268EB48E00994623 /* Japanese Flash Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Japanese Flash Cards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B12505268EB48E00994623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9B12507268EB48E00994623 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E9B12509268EB48E00994623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9B12509268EB48E00994623 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		E9B1250C268EB48E00994623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9B1250E268EB48F00994623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9B12511268EB48F00994623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +37,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E956B9BE26903AA100484A6A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9B12509268EB48E00994623 /* QuizViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E956B9BF26903ABD00484A6A /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		E956B9C026903AC900484A6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9B1250B268EB48E00994623 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E9B124F9268EB48E00994623 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +79,11 @@
 		E9B12504268EB48E00994623 /* Japanese Flash Cards */ = {
 			isa = PBXGroup;
 			children = (
+				E956B9C026903AC900484A6A /* Views */,
+				E956B9BF26903ABD00484A6A /* Data Model */,
+				E956B9BE26903AA100484A6A /* Controllers */,
 				E9B12505268EB48E00994623 /* AppDelegate.swift */,
 				E9B12507268EB48E00994623 /* SceneDelegate.swift */,
-				E9B12509268EB48E00994623 /* ViewController.swift */,
-				E9B1250B268EB48E00994623 /* Main.storyboard */,
 				E9B1250E268EB48F00994623 /* Assets.xcassets */,
 				E9B12510268EB48F00994623 /* LaunchScreen.storyboard */,
 				E9B12513268EB48F00994623 /* Info.plist */,
@@ -137,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B1250A268EB48E00994623 /* ViewController.swift in Sources */,
+				E9B1250A268EB48E00994623 /* QuizViewController.swift in Sources */,
 				E9B12506268EB48E00994623 /* AppDelegate.swift in Sources */,
 				E9B12508268EB48E00994623 /* SceneDelegate.swift in Sources */,
 			);
