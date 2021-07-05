@@ -31,18 +31,19 @@ class QuizViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         if sender.currentTitle! == quiz[questionNumber].correctAnswer {
-            print("Correct")
+            sender.backgroundColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
         } else {
-            print("Wrong")
+            sender.backgroundColor = #colorLiteral(red: 0.7846533656, green: 0.2946209013, blue: 0.194943279, alpha: 1)
         }
-        goToNextQuestion()
+        
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(goToNextQuestion), userInfo: nil, repeats: false)
     }
     
     func shuffleAnswers() {
         quiz[questionNumber].answers.shuffle()
     }
     
-    func goToNextQuestion() {
+    @objc func goToNextQuestion() {
         if questionNumber >= quiz.count - 1 {
             questionNumber = 0
         } else {
@@ -71,11 +72,10 @@ class QuizViewController: UIViewController {
 
 extension UIButton {
     func applyButtonDesign() {
-        self.backgroundColor = #colorLiteral(red: 0.2263737917, green: 0.2461832166, blue: 0.2789179683, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 0.09018556029, green: 0.09020196646, blue: 0.09017995745, alpha: 1)
         self.layer.cornerRadius = 20.0
         self.layer.borderWidth = 1.0
-        self.layer.borderColor = #colorLiteral(red: 0.9318081737, green: 0.9319420457, blue: 0.9317788482, alpha: 1)
-        self.tintColor = #colorLiteral(red: 0.9318081737, green: 0.9319420457, blue: 0.9317788482, alpha: 1)
+        self.layer.borderColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
+        self.tintColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
     }
 }
-
