@@ -9,18 +9,32 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var buttonA: UIButton!
     @IBOutlet weak var buttonB: UIButton!
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
     
+    let quiz = [
+        Question(text: "月", answers: ["つき","き","にち","に"], correctAnswer: "つき")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateUI()
+    }
+    
+    func updateUI() {
         buttonA.applyButtonDesign()
         buttonB.applyButtonDesign()
         buttonC.applyButtonDesign()
         buttonD.applyButtonDesign()
+        questionLabel.text = quiz[0].text
+        buttonA.setTitle(quiz[0].answers[0], for: .normal)
+        buttonB.setTitle(quiz[0].answers[1], for: .normal)
+        buttonC.setTitle(quiz[0].answers[2], for: .normal)
+        buttonD.setTitle(quiz[0].answers[3], for: .normal)
     }
 }
 
