@@ -25,6 +25,14 @@ class QuizViewController: UIViewController {
         updateUI()
     }
     
+    @IBAction func answerButtonPressed(_ sender: UIButton) {
+        if sender.currentTitle! == quiz[0].correctAnswer {
+            print("Correct")
+        } else {
+            print("Wrong")
+        }
+    }
+    
     func updateUI() {
         buttonA.applyButtonDesign()
         buttonB.applyButtonDesign()
