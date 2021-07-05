@@ -23,17 +23,23 @@ class QuizViewController: UIViewController {
     ]
     
     var questionNumber = 0
+    var correctScore = 0 // refresh this value at the end of the quiz
+    var wrongCount = 0 // refresh this value for next question
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         updateUI()
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         if sender.currentTitle! == quiz[questionNumber].correctAnswer {
+            if wrongCount == 0 {
+                correctScore += 1
+            }
+            sender.alpha = 0.8
             sender.backgroundColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
         } else {
+            wrongCount += 1
             sender.isEnabled = false
             sender.alpha = 0.3
             return
@@ -47,12 +53,20 @@ class QuizViewController: UIViewController {
     }
     
     @objc func goToNextQuestion() {
+        wrongCount = 0
+        
         if questionNumber >= quiz.count - 1 {
             questionNumber = 0
+            print(getResult())
+            correctScore = 0
         } else {
             questionNumber += 1
         }
         updateUI()
+    }
+    
+    func getResult() -> Int {
+        return Int((Float(correctScore) / Float(quiz.count)) * 100)
     }
     
     func updateUI() {
