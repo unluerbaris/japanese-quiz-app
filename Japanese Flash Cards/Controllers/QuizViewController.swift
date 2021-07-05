@@ -15,7 +15,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
     
-    let quiz = [
+    var quiz = [
         Question(text: "月", answers: ["つき","き","にち","に"], correctAnswer: "つき"),
         Question(text: "日", answers: ["き","ひ","ち","は"], correctAnswer: "ひ"),
         Question(text: "人", answers: ["ひと","き","つき","ひげ"], correctAnswer: "ひと")
@@ -38,6 +38,10 @@ class QuizViewController: UIViewController {
         goToNextQuestion()
     }
     
+    func shuffleAnswers() {
+        quiz[questionNumber].answers.shuffle()
+    }
+    
     func goToNextQuestion() {
         if questionNumber >= quiz.count - 1 {
             questionNumber = 0
@@ -48,11 +52,16 @@ class QuizViewController: UIViewController {
     }
     
     func updateUI() {
+        // Button styling
         buttonA.applyButtonDesign()
         buttonB.applyButtonDesign()
         buttonC.applyButtonDesign()
         buttonD.applyButtonDesign()
+        
+        // Update questions and answers
         questionLabel.text = quiz[questionNumber].text
+        
+        shuffleAnswers()
         buttonA.setTitle(quiz[questionNumber].answers[0], for: .normal)
         buttonB.setTitle(quiz[questionNumber].answers[1], for: .normal)
         buttonC.setTitle(quiz[questionNumber].answers[2], for: .normal)
