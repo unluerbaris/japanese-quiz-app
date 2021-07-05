@@ -14,6 +14,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var buttonB: UIButton!
     @IBOutlet weak var buttonC: UIButton!
     @IBOutlet weak var buttonD: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     var quiz = [
         Question(text: "月", answers: ["つき","き","にち","に"], correctAnswer: "つき"),
@@ -67,6 +68,9 @@ class QuizViewController: UIViewController {
         buttonB.setTitle(quiz[questionNumber].answers[1], for: .normal)
         buttonC.setTitle(quiz[questionNumber].answers[2], for: .normal)
         buttonD.setTitle(quiz[questionNumber].answers[3], for: .normal)
+        
+        // Progress Bar
+        progressBar.progress = Float(questionNumber) / Float(quiz.count)
     }
 }
 
@@ -76,6 +80,6 @@ extension UIButton {
         self.layer.cornerRadius = 20.0
         self.layer.borderWidth = 1.0
         self.layer.borderColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
-        self.tintColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
+        self.tintColor = #colorLiteral(red: 0.9230945706, green: 0.862467885, blue: 0.7350425124, alpha: 1)
     }
 }

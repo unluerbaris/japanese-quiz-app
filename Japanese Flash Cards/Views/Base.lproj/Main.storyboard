@@ -18,21 +18,25 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KFT-Ev-BAs">
                                 <rect key="frame" x="20" y="44" width="374" height="798"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zT3-ar-7CF" userLabel="Question View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cWX-aj-Hhi" userLabel="Question View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="396.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6n-WG-w9b" userLabel="Question Label">
-                                                <rect key="frame" x="117.5" y="162.5" width="139.5" height="72"/>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7zH-q2-QXe" userLabel="Progress Bar">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="KmX-FE-87b"/>
+                                                </constraints>
+                                                <color key="progressTintColor" red="0.72744697329999997" green="0.32719051840000002" blue="0.23133838179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="trackTintColor" red="0.91277748349999999" green="0.86451816560000005" blue="0.74900257589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </progressView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6n-WG-w9b" userLabel="Question Label">
+                                                <rect key="frame" x="0.0" y="20" width="374" height="376.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                                 <color key="textColor" red="0.91275763509999996" green="0.86457329989999998" blue="0.74508035179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="W6n-WG-w9b" firstAttribute="centerY" secondItem="zT3-ar-7CF" secondAttribute="centerY" id="MEO-Yj-AKm"/>
-                                            <constraint firstItem="W6n-WG-w9b" firstAttribute="centerX" secondItem="zT3-ar-7CF" secondAttribute="centerX" id="t79-Og-ADq"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-H3-wwb" userLabel="Answers View">
                                         <rect key="frame" x="0.0" y="401.5" width="374" height="396.5"/>
                                         <subviews>
@@ -95,6 +99,7 @@
                         <outlet property="buttonB" destination="eIw-bd-s3r" id="vON-lR-Xub"/>
                         <outlet property="buttonC" destination="gBE-22-i5a" id="jFa-ZW-vEk"/>
                         <outlet property="buttonD" destination="trT-My-Y6D" id="8ck-am-KNK"/>
+                        <outlet property="progressBar" destination="7zH-q2-QXe" id="7Q3-iw-U79"/>
                         <outlet property="questionLabel" destination="W6n-WG-w9b" id="0fm-3K-XTp"/>
                     </connections>
                 </viewController>
