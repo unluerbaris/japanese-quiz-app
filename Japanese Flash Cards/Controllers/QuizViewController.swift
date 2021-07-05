@@ -34,7 +34,9 @@ class QuizViewController: UIViewController {
         if sender.currentTitle! == quiz[questionNumber].correctAnswer {
             sender.backgroundColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
         } else {
-            sender.backgroundColor = #colorLiteral(red: 0.7846533656, green: 0.2946209013, blue: 0.194943279, alpha: 1)
+            sender.isEnabled = false
+            sender.alpha = 0.3
+            return
         }
         
         Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(goToNextQuestion), userInfo: nil, repeats: false)
@@ -55,10 +57,10 @@ class QuizViewController: UIViewController {
     
     func updateUI() {
         // Button styling
-        buttonA.applyButtonDesign()
-        buttonB.applyButtonDesign()
-        buttonC.applyButtonDesign()
-        buttonD.applyButtonDesign()
+        buttonA.applyButtonConfigs()
+        buttonB.applyButtonConfigs()
+        buttonC.applyButtonConfigs()
+        buttonD.applyButtonConfigs()
         
         // Update questions and answers
         questionLabel.text = quiz[questionNumber].text
@@ -75,7 +77,9 @@ class QuizViewController: UIViewController {
 }
 
 extension UIButton {
-    func applyButtonDesign() {
+    func applyButtonConfigs() {
+        self.isEnabled = true
+        self.alpha = 1.0
         self.backgroundColor = #colorLiteral(red: 0.09018556029, green: 0.09020196646, blue: 0.09017995745, alpha: 1)
         self.layer.cornerRadius = 20.0
         self.layer.borderWidth = 1.0
