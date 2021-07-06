@@ -38,11 +38,21 @@ class QuizViewController: UIViewController {
         }
         
         Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(goToNextQuestion), userInfo: nil, repeats: false)
+        
+        if quizBrain.isLastQuestion() {
+            goToResultPage()
+        }
     }
     
     @objc func goToNextQuestion() {
         quizBrain.getNextQuestion()
         updateUI()
+    }
+    
+    func goToResultPage() {
+        let resultVC = ResultViewController()
+        resultVC.resultValue = String(quizBrain.getResult())
+        self.present(resultVC, animated: true, completion: nil)
     }
     
     func updateUI() {

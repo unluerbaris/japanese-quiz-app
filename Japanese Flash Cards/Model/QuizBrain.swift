@@ -33,6 +33,13 @@ struct QuizBrain {
         }
     }
     
+    func isLastQuestion() -> Bool {
+        if questionNumber >= quiz.count - 1 {
+            return true
+        }
+        return false
+    }
+    
     mutating func shuffleAnswers() {
         quiz[questionNumber].answers.shuffle()
     }
