@@ -50,9 +50,7 @@ class QuizViewController: UIViewController {
     }
     
     func goToResultPage() {
-        let resultVC = ResultViewController()
-        resultVC.resultValue = String(quizBrain.getResult())
-        self.present(resultVC, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
     func updateUI() {
@@ -73,6 +71,13 @@ class QuizViewController: UIViewController {
         
         // Progress Bar
         progressBar.progress = quizBrain.getProgress()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.resultValue = String(quizBrain.getResult())
+        }
     }
 }
 

@@ -8,17 +8,14 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+
+    @IBOutlet weak var resultLabel: UILabel!
     
-    var resultValue = "70%"
+    var resultValue: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.red
-        
-        let label = UILabel()
-        label.text = resultValue
-        label.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
-        view.addSubview(label)
+        resultLabel.text = resultValue
     }
 }
