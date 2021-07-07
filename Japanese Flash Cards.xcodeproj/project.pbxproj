@@ -16,6 +16,7 @@
 		E9B1250F268EB48F00994623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B1250E268EB48F00994623 /* Assets.xcassets */; };
 		E9B12512268EB48F00994623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B12510268EB48F00994623 /* LaunchScreen.storyboard */; };
 		E9D3CB2D26952F4100B65BB7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D3CB2C26952F4100B65BB7 /* Colors.xcassets */; };
+		E9D3CB30269538B100B65BB7 /* WhiteBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3CB2F269538B100B65BB7 /* WhiteBorderButton.swift */; };
 		E9E9EC212692EFCD00F05ECE /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9EC202692EFCD00F05ECE /* QuizBrain.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		E9B12511268EB48F00994623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9B12513268EB48F00994623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9D3CB2C26952F4100B65BB7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E9D3CB2F269538B100B65BB7 /* WhiteBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBorderButton.swift; sourceTree = "<group>"; };
 		E9E9EC202692EFCD00F05ECE /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				E956B9BF26903ABD00484A6A /* Model */,
 				E956B9C026903AC900484A6A /* Views */,
 				E956B9BE26903AA100484A6A /* Controllers */,
+				E9D3CB2E269537FE00B65BB7 /* Components */,
 				E9B12505268EB48E00994623 /* AppDelegate.swift */,
 				E9B12507268EB48E00994623 /* SceneDelegate.swift */,
 				E9B1250E268EB48F00994623 /* Assets.xcassets */,
@@ -101,6 +104,14 @@
 				E9D3CB2C26952F4100B65BB7 /* Colors.xcassets */,
 			);
 			path = "Japanese Flash Cards";
+			sourceTree = "<group>";
+		};
+		E9D3CB2E269537FE00B65BB7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E9D3CB2F269538B100B65BB7 /* WhiteBorderButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				E9B12506268EB48E00994623 /* AppDelegate.swift in Sources */,
 				E9B12508268EB48E00994623 /* SceneDelegate.swift in Sources */,
 				E9A566892694453B00FA3523 /* ResultViewController.swift in Sources */,
+				E9D3CB30269538B100B65BB7 /* WhiteBorderButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

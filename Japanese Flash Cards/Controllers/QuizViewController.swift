@@ -10,10 +10,10 @@ import UIKit
 class QuizViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var buttonA: UIButton!
-    @IBOutlet weak var buttonB: UIButton!
-    @IBOutlet weak var buttonC: UIButton!
-    @IBOutlet weak var buttonD: UIButton!
+    @IBOutlet weak var buttonA: WhiteBorderButton!
+    @IBOutlet weak var buttonB: WhiteBorderButton!
+    @IBOutlet weak var buttonC: WhiteBorderButton!
+    @IBOutlet weak var buttonD: WhiteBorderButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
     var quizBrain = QuizBrain()
@@ -55,10 +55,10 @@ class QuizViewController: UIViewController {
     
     func updateUI() {
         // Button styling
-        buttonA.applyButtonConfigs()
-        buttonB.applyButtonConfigs()
-        buttonC.applyButtonConfigs()
-        buttonD.applyButtonConfigs()
+        buttonA.setConfig()
+        buttonB.setConfig()
+        buttonC.setConfig()
+        buttonD.setConfig()
         
         // Update questions and answers
         questionLabel.text = quizBrain.getQuestionText()
@@ -81,14 +81,14 @@ class QuizViewController: UIViewController {
     }
 }
 
-extension UIButton {
-    func applyButtonConfigs() {
-        self.isEnabled = true
-        self.alpha = 1.0
-        self.backgroundColor = #colorLiteral(red: 0.09018556029, green: 0.09020196646, blue: 0.09017995745, alpha: 1)
-        self.layer.cornerRadius = 20.0
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
-        self.tintColor = #colorLiteral(red: 0.9230945706, green: 0.862467885, blue: 0.7350425124, alpha: 1)
-    }
-}
+//extension UIButton {
+//    func applyButtonConfigs() {
+//        self.isEnabled = true
+//        self.alpha = 1.0
+//        self.backgroundColor = #colorLiteral(red: 0.09018556029, green: 0.09020196646, blue: 0.09017995745, alpha: 1)
+//        self.layer.cornerRadius = 20.0
+//        self.layer.borderWidth = 1.0
+//        self.layer.borderColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
+//        self.tintColor = #colorLiteral(red: 0.9230945706, green: 0.862467885, blue: 0.7350425124, alpha: 1)
+//    }
+//}

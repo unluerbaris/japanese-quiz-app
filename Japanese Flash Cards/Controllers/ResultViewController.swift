@@ -16,6 +16,10 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resultLabel.text = resultValue
+        resultLabel.text = "\(resultValue!)%"
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

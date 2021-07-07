@@ -41,7 +41,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-H3-wwb" userLabel="Answers View">
                                         <rect key="frame" x="0.0" y="401.5" width="374" height="396.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlW-Mm-N5A" userLabel="Button A">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlW-Mm-N5A" userLabel="Button A" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="93"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Button">
@@ -51,7 +51,7 @@
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ODy-sC-B8k"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-bd-s3r" userLabel="Button B">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-bd-s3r" userLabel="Button B" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="101" width="374" height="93.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Button">
@@ -61,7 +61,7 @@
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zjl-AO-L0Z"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-22-i5a" userLabel="Button C">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-22-i5a" userLabel="Button C" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="202.5" width="374" height="93"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Button">
@@ -71,7 +71,7 @@
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLX-T0-C4J"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trT-My-Y6D" userLabel="Button D">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trT-My-Y6D" userLabel="Button D" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="303.5" width="374" height="93"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Button">
@@ -132,23 +132,40 @@
                                         <color key="textColor" name="Accent"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-gT-mi7" userLabel="Next Button">
-                                        <rect key="frame" x="176.5" y="538.5" width="61" height="269.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" name="Accent"/>
-                                        </state>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8aD-s6-tgx" userLabel="Buttons View">
+                                        <rect key="frame" x="0.0" y="538.5" width="414" height="269.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-gT-mi7" userLabel="Next Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="0.0" width="334" height="269.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Next">
+                                                    <color key="titleColor" name="Accent"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="Kw6-3L-kWG" eventType="touchUpInside" id="xOV-Jh-xfA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="vSJ-gT-mi7" firstAttribute="leading" secondItem="8aD-s6-tgx" secondAttribute="leading" constant="40" id="rzX-0P-Ir2"/>
+                                            <constraint firstAttribute="trailing" secondItem="vSJ-gT-mi7" secondAttribute="trailing" constant="40" id="ttN-dr-Nen"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8aD-s6-tgx" secondAttribute="trailing" id="13k-0m-fPc"/>
+                                    <constraint firstItem="8aD-s6-tgx" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" id="9Sy-Q0-XDO"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5S5-qD-A1L"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="5S5-qD-A1L" firstAttribute="trailing" secondItem="qLf-yj-tKu" secondAttribute="trailing" id="9kf-IQ-NsF"/>
-                            <constraint firstItem="qLf-yj-tKu" firstAttribute="leading" secondItem="5S5-qD-A1L" secondAttribute="leading" id="KAd-y4-WLI"/>
-                            <constraint firstItem="qLf-yj-tKu" firstAttribute="top" secondItem="5S5-qD-A1L" secondAttribute="top" id="h8I-xL-pck"/>
-                            <constraint firstItem="5S5-qD-A1L" firstAttribute="bottom" secondItem="qLf-yj-tKu" secondAttribute="bottom" id="nS9-uY-mVT"/>
+                            <constraint firstItem="qLf-yj-tKu" firstAttribute="leading" secondItem="5S5-qD-A1L" secondAttribute="leading" id="94y-T1-Ghx"/>
+                            <constraint firstItem="qLf-yj-tKu" firstAttribute="centerX" secondItem="fTS-dk-46Z" secondAttribute="centerX" id="KUa-yJ-JgD"/>
+                            <constraint firstItem="5S5-qD-A1L" firstAttribute="bottom" secondItem="qLf-yj-tKu" secondAttribute="bottom" id="WUc-vj-MRE"/>
+                            <constraint firstItem="qLf-yj-tKu" firstAttribute="top" secondItem="5S5-qD-A1L" secondAttribute="top" id="Wkl-B6-EXg"/>
+                            <constraint firstItem="5S5-qD-A1L" firstAttribute="trailing" secondItem="qLf-yj-tKu" secondAttribute="trailing" id="af5-VC-Q8O"/>
                         </constraints>
                     </view>
                     <connections>
