@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,13 +27,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="5" id="KmX-FE-87b"/>
                                                 </constraints>
-                                                <color key="progressTintColor" red="0.72744697329999997" green="0.32719051840000002" blue="0.23133838179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="trackTintColor" red="0.91277748349999999" green="0.86451816560000005" blue="0.74900257589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="progressTintColor" name="Progress"/>
+                                                <color key="trackTintColor" name="Accent"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6n-WG-w9b" userLabel="Question Label">
                                                 <rect key="frame" x="0.0" y="20" width="374" height="376.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                                <color key="textColor" red="0.91275763509999996" green="0.86457329989999998" blue="0.74508035179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" name="Accent"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -45,7 +45,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="93"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Button">
-                                                    <color key="titleColor" red="0.90491551160000006" green="0.85672885180000002" blue="0.73723715540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleColor" name="Accent"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ODy-sC-B8k"/>
@@ -55,7 +55,7 @@
                                                 <rect key="frame" x="0.0" y="101" width="374" height="93.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Button">
-                                                    <color key="titleColor" red="0.90493541960000001" green="0.86064893009999999" blue="0.74115890259999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleColor" name="Accent"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zjl-AO-L0Z"/>
@@ -65,7 +65,7 @@
                                                 <rect key="frame" x="0.0" y="202.5" width="374" height="93"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Button">
-                                                    <color key="titleColor" red="0.90491551160000006" green="0.85672885180000002" blue="0.73723715540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleColor" name="Accent"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLX-T0-C4J"/>
@@ -75,7 +75,7 @@
                                                 <rect key="frame" x="0.0" y="303.5" width="374" height="93"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Button">
-                                                    <color key="titleColor" red="0.82657271619999995" green="0.78203970190000005" blue="0.67449378969999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleColor" name="Accent"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZhU-Bs-x9f"/>
@@ -87,7 +87,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.090197913350000006" green="0.090192742650000005" blue="0.09019625932" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="KFT-Ev-BAs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TYi-Fm-n14"/>
                             <constraint firstItem="KFT-Ev-BAs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XXR-5e-12m"/>
@@ -117,16 +117,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-fD-aUp" userLabel="Result Label">
-                                <rect key="frame" x="137" y="412" width="140" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qLf-yj-tKu" userLabel="Result View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfQ-wg-dbH" userLabel="Info Label">
+                                        <rect key="frame" x="58.5" y="0.0" width="297.5" height="269.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <color key="textColor" name="Accent"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-fD-aUp" userLabel="Result Label">
+                                        <rect key="frame" x="137.5" y="269.5" width="139.5" height="269"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <color key="textColor" name="Accent"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-gT-mi7" userLabel="Next Button">
+                                        <rect key="frame" x="176.5" y="538.5" width="61" height="269.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" name="Accent"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5S5-qD-A1L"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="5S5-qD-A1L" firstAttribute="trailing" secondItem="qLf-yj-tKu" secondAttribute="trailing" id="9kf-IQ-NsF"/>
+                            <constraint firstItem="qLf-yj-tKu" firstAttribute="leading" secondItem="5S5-qD-A1L" secondAttribute="leading" id="KAd-y4-WLI"/>
+                            <constraint firstItem="qLf-yj-tKu" firstAttribute="top" secondItem="5S5-qD-A1L" secondAttribute="top" id="h8I-xL-pck"/>
+                            <constraint firstItem="5S5-qD-A1L" firstAttribute="bottom" secondItem="qLf-yj-tKu" secondAttribute="bottom" id="nS9-uY-mVT"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="resultLabel" destination="5Hs-fD-aUp" id="dAh-Wj-iCS"/>
@@ -138,8 +161,14 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Accent">
+            <color red="0.91275763509999996" green="0.86457329989999998" blue="0.74508035179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Background">
+            <color red="0.090197913350000006" green="0.090192742650000005" blue="0.09019625932" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Progress">
+            <color red="0.72744697329999997" green="0.32719051840000002" blue="0.23133838179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

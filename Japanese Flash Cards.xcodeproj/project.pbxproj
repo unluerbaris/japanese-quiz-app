@@ -15,6 +15,7 @@
 		E9B1250D268EB48E00994623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B1250B268EB48E00994623 /* Main.storyboard */; };
 		E9B1250F268EB48F00994623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B1250E268EB48F00994623 /* Assets.xcassets */; };
 		E9B12512268EB48F00994623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B12510268EB48F00994623 /* LaunchScreen.storyboard */; };
+		E9D3CB2D26952F4100B65BB7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D3CB2C26952F4100B65BB7 /* Colors.xcassets */; };
 		E9E9EC212692EFCD00F05ECE /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9EC202692EFCD00F05ECE /* QuizBrain.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		E9B1250E268EB48F00994623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9B12511268EB48F00994623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9B12513268EB48F00994623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D3CB2C26952F4100B65BB7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9E9EC202692EFCD00F05ECE /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				E9B1250E268EB48F00994623 /* Assets.xcassets */,
 				E9B12510268EB48F00994623 /* LaunchScreen.storyboard */,
 				E9B12513268EB48F00994623 /* Info.plist */,
+				E9D3CB2C26952F4100B65BB7 /* Colors.xcassets */,
 			);
 			path = "Japanese Flash Cards";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9B12512268EB48F00994623 /* LaunchScreen.storyboard in Resources */,
+				E9D3CB2D26952F4100B65BB7 /* Colors.xcassets in Resources */,
 				E9B1250F268EB48F00994623 /* Assets.xcassets in Resources */,
 				E9B1250D268EB48E00994623 /* Main.storyboard in Resources */,
 			);
