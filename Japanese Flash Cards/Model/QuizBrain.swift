@@ -8,10 +8,13 @@
 import Foundation
 
 struct QuizBrain {
-    var quiz = [
-        Question(text: "月", answers: ["つき","き","にち","に"], correctAnswer: "つき"),
-        Question(text: "日", answers: ["き","ひ","ち","は"], correctAnswer: "ひ"),
-        Question(text: "人", answers: ["ひと","き","つき","ひげ"], correctAnswer: "ひと")
+    
+    var quizBank = [
+        [
+            Question(text: "月", answers: ["つき","き","にち","に"], correctAnswer: "つき"),
+            Question(text: "日", answers: ["き","ひ","ち","は"], correctAnswer: "ひ"),
+            Question(text: "人", answers: ["ひと","き","つき","ひげ"], correctAnswer: "ひと")
+        ]
     ]
     
     var questionNumber = 0
@@ -19,12 +22,12 @@ struct QuizBrain {
     var wrongCount = 0 // refresh this value for next question
     
     func checkAnswer(_ userAnswer: String) -> Bool {
-        return userAnswer == quiz[questionNumber].correctAnswer
+        return userAnswer == quizBank[0][questionNumber].correctAnswer
     }
     
     mutating func getNextQuestion() {
         wrongCount = 0
-        if questionNumber >= quiz.count - 1 {
+        if questionNumber >= quizBank[0].count - 1 {
             questionNumber = 0
             print(getResult())
             correctScore = 0
@@ -34,30 +37,34 @@ struct QuizBrain {
     }
     
     func isLastQuestion() -> Bool {
-        if questionNumber >= quiz.count - 1 {
+        if questionNumber >= quizBank[0].count - 1 {
             return true
         }
         return false
     }
     
     mutating func shuffleAnswers() {
-        quiz[questionNumber].answers.shuffle()
+        quizBank[0][questionNumber].answers.shuffle()
+    }
+    
+    func getQuiz(index: Int) -> Array<Question> {
+        return quizBank[index]
     }
     
     func getQuestionText() -> String {
-        return quiz[questionNumber].text
+        return quizBank[0][questionNumber].text
     }
     
     func getAnswerButtonText(index: Int) -> String {
-        return quiz[questionNumber].answers[index]
+        return quizBank[0][questionNumber].answers[index]
     }
     
     func getProgress() -> Float {
-        return Float(questionNumber) / Float(quiz.count)
+        return Float(questionNumber) / Float(quizBank[0].count)
     }
     
     func getResult() -> Int {
-        return Int((Float(correctScore) / Float(quiz.count)) * 100)
+        return Int((Float(correctScore) / Float(quizBank[0].count)) * 100)
     }
     
     func getWrongAnswerCount() -> Int {

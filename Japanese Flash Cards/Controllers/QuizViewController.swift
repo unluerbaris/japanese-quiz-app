@@ -17,9 +17,12 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     
     var quizBrain = QuizBrain()
+    var lesson: Lesson?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lesson = Lesson(lessonIndex: 0, isSuccessful: false, quiz: quizBrain.getQuiz(index: 0))
         updateUI()
     }
     
@@ -77,6 +80,7 @@ class QuizViewController: UIViewController {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.resultValue = String(quizBrain.getResult())
+            destinationVC.lesson = lesson
         }
     }
 }
