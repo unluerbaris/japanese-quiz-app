@@ -12,14 +12,29 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     var resultValue: String?
+    var isSuccessful: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resultLabel.text = "\(resultValue!)%"
+        
+        if Int(resultValue!)! >= 70 {
+            isSuccessful = true
+        } else {
+            isSuccessful = false
+        }
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "goToLessonsMenu", sender: self)
+    }
+    
+    // TODO: Change this solution after creating Lesson Model
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToLessonsMenu" && isSuccessful! {
+            let destinationVC = segue.destination as! LessonsViewController
+            destinationVC.isLessonSuccessful = true
+        }
     }
 }

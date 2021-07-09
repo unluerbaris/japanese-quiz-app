@@ -8,9 +8,21 @@
 import UIKit
 
 class LessonsViewController: UIViewController {
-
+    
+    // TODO: Change this after creating Lesson Model
+    @IBOutlet weak var lessonOneButton: WhiteBorderButton!
+    
+    // TODO: Change this after creating Lesson Model
+    var isLessonSuccessful = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // TODO: Change this after creating Lesson Model
+        if isLessonSuccessful {
+            lessonOneButton.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
+            lessonOneButton.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
+        }
     }
     
     @IBAction func lessonButtonPressed(_ sender: UIButton) {
