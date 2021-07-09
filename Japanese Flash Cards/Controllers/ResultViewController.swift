@@ -20,6 +20,6 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goToLessonsMenu", sender: self)
     }
 }

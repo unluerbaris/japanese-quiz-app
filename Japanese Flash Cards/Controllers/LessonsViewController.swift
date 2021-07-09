@@ -11,11 +11,10 @@ class LessonsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func lessonButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToLesson", sender: self)
     }
     
     /*
@@ -27,5 +26,4 @@ class LessonsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
