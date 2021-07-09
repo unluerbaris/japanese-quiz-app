@@ -121,22 +121,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfQ-wg-dbH" userLabel="Info Label">
-                                        <rect key="frame" x="58.5" y="0.0" width="297.5" height="269.5"/>
+                                        <rect key="frame" x="10" y="0.0" width="394" height="269.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <color key="textColor" name="Accent"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-fD-aUp" userLabel="Result Label">
-                                        <rect key="frame" x="137.5" y="269.5" width="139.5" height="269"/>
+                                        <rect key="frame" x="10" y="269.5" width="394" height="269"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" name="Accent"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8aD-s6-tgx" userLabel="Buttons View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaU-8r-u7e" userLabel="Button View">
                                         <rect key="frame" x="0.0" y="538.5" width="414" height="269.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-gT-mi7" userLabel="Next Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                                <rect key="frame" x="40" y="0.0" width="334" height="269.5"/>
+                                                <rect key="frame" x="100" y="85" width="214" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="iP6-6r-US1"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Next">
                                                     <color key="titleColor" name="Accent"/>
@@ -146,15 +149,24 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" name="Background"/>
                                         <constraints>
-                                            <constraint firstItem="vSJ-gT-mi7" firstAttribute="leading" secondItem="8aD-s6-tgx" secondAttribute="leading" constant="40" id="rzX-0P-Ir2"/>
-                                            <constraint firstAttribute="trailing" secondItem="vSJ-gT-mi7" secondAttribute="trailing" constant="40" id="ttN-dr-Nen"/>
+                                            <constraint firstItem="vSJ-gT-mi7" firstAttribute="centerX" secondItem="jaU-8r-u7e" secondAttribute="centerX" id="LHW-Mx-OJw"/>
+                                            <constraint firstAttribute="trailing" secondItem="vSJ-gT-mi7" secondAttribute="trailing" constant="100" id="WBT-no-WXd"/>
+                                            <constraint firstItem="vSJ-gT-mi7" firstAttribute="leading" secondItem="jaU-8r-u7e" secondAttribute="leading" constant="100" id="b0g-H3-GGz"/>
+                                            <constraint firstItem="vSJ-gT-mi7" firstAttribute="centerY" secondItem="jaU-8r-u7e" secondAttribute="centerY" id="tXh-33-kt5"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8aD-s6-tgx" secondAttribute="trailing" id="13k-0m-fPc"/>
-                                    <constraint firstItem="8aD-s6-tgx" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" id="9Sy-Q0-XDO"/>
+                                    <constraint firstItem="5Hs-fD-aUp" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" constant="10" id="2dd-1g-Jnv"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Hs-fD-aUp" secondAttribute="trailing" constant="10" id="68T-I8-l2f"/>
+                                    <constraint firstItem="mfQ-wg-dbH" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" constant="10" id="JLw-iP-1Mx"/>
+                                    <constraint firstAttribute="trailing" secondItem="jaU-8r-u7e" secondAttribute="trailing" id="Swo-4G-5u7"/>
+                                    <constraint firstAttribute="trailing" secondItem="mfQ-wg-dbH" secondAttribute="trailing" constant="10" id="TTX-L6-Pra"/>
+                                    <constraint firstItem="jaU-8r-u7e" firstAttribute="top" secondItem="5Hs-fD-aUp" secondAttribute="bottom" id="WPa-dD-a8X"/>
+                                    <constraint firstAttribute="bottom" secondItem="jaU-8r-u7e" secondAttribute="bottom" id="rfO-ci-z9X"/>
+                                    <constraint firstItem="jaU-8r-u7e" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" id="yzO-31-lr5"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -179,13 +191,13 @@
     </scenes>
     <resources>
         <namedColor name="Accent">
-            <color red="0.91275763509999996" green="0.86457329989999998" blue="0.74508035179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.91299998760223389" green="0.86500000953674316" blue="0.74500000476837158" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Background">
-            <color red="0.090197913350000006" green="0.090192742650000005" blue="0.09019625932" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.090000003576278687" green="0.090000003576278687" blue="0.090000003576278687" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Progress">
-            <color red="0.72744697329999997" green="0.32719051840000002" blue="0.23133838179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.72699999809265137" green="0.32699999213218689" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
