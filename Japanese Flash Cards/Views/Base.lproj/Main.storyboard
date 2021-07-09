@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1rG-Ob-uBB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -102,41 +102,125 @@
                         <outlet property="buttonD" destination="trT-My-Y6D" id="8ck-am-KNK"/>
                         <outlet property="progressBar" destination="7zH-q2-QXe" id="7Q3-iw-U79"/>
                         <outlet property="questionLabel" destination="W6n-WG-w9b" id="0fm-3K-XTp"/>
-                        <segue destination="Kw6-3L-kWG" kind="presentation" identifier="goToResult" id="rsq-Cr-5bw"/>
+                        <segue destination="Kw6-3L-kWG" kind="presentation" identifier="goToResult" modalPresentationStyle="fullScreen" id="rsq-Cr-5bw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="110.49107142857143"/>
         </scene>
+        <!--Lessons View Controller-->
+        <scene sceneID="dM4-GL-bSK">
+            <objects>
+                <viewController id="1rG-Ob-uBB" customClass="LessonsViewController" customModule="Japanese_Flash_Cards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J5d-gE-WPO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="CWV-RT-fCV" userLabel="Lessons View">
+                                <rect key="frame" x="0.0" y="94" width="414" height="718"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXe-xr-8eS" userLabel="N5 Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
+                                        <rect key="frame" x="132" y="0.0" width="150" height="103.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="e8p-ew-8L0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="N5">
+                                            <color key="titleColor" name="Accent"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lessonButtonPressed:" destination="1rG-Ob-uBB" eventType="touchUpInside" id="94c-Kx-pjW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roa-Pj-sig" userLabel="N4 Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
+                                        <rect key="frame" x="132" y="153.5" width="150" height="103.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="doc-xk-M8A"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="N4">
+                                            <color key="titleColor" name="Accent"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEE-U1-0j0" userLabel="N3 Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
+                                        <rect key="frame" x="132" y="307" width="150" height="104"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="aCI-vT-89u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="N3">
+                                            <color key="titleColor" name="Accent"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ui-Ai-8Jc" userLabel="N2 Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
+                                        <rect key="frame" x="132" y="461" width="150" height="103.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="yf3-A8-0CU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="N2">
+                                            <color key="titleColor" name="Accent"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE1-eI-4P5" userLabel="N1 Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
+                                        <rect key="frame" x="132" y="614.5" width="150" height="103.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="TpC-ge-3xi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="N1">
+                                            <color key="titleColor" name="Accent"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6qX-rA-DIv"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="6qX-rA-DIv" firstAttribute="bottom" secondItem="CWV-RT-fCV" secondAttribute="bottom" constant="50" id="DhY-SS-I1o"/>
+                            <constraint firstItem="CWV-RT-fCV" firstAttribute="leading" secondItem="6qX-rA-DIv" secondAttribute="leading" id="FdH-IS-iex"/>
+                            <constraint firstItem="6qX-rA-DIv" firstAttribute="trailing" secondItem="CWV-RT-fCV" secondAttribute="trailing" id="o8Q-NW-qTy"/>
+                            <constraint firstItem="CWV-RT-fCV" firstAttribute="top" secondItem="6qX-rA-DIv" secondAttribute="top" constant="50" id="tPS-f7-PRh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="s6d-54-vEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVT-3W-WP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="-617"/>
+        </scene>
         <!--Result View Controller-->
         <scene sceneID="DMh-5x-68b">
             <objects>
                 <viewController id="Kw6-3L-kWG" customClass="ResultViewController" customModule="Japanese_Flash_Cards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fTS-dk-46Z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qLf-yj-tKu" userLabel="Result View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfQ-wg-dbH" userLabel="Info Label">
-                                        <rect key="frame" x="10" y="0.0" width="394" height="269.5"/>
+                                        <rect key="frame" x="10" y="0.0" width="394" height="272.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <color key="textColor" name="Accent"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-fD-aUp" userLabel="Result Label">
-                                        <rect key="frame" x="10" y="269.5" width="394" height="269"/>
+                                        <rect key="frame" x="10" y="272.5" width="394" height="273"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" name="Accent"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaU-8r-u7e" userLabel="Button View">
-                                        <rect key="frame" x="0.0" y="538.5" width="414" height="269.5"/>
+                                        <rect key="frame" x="0.0" y="545.5" width="414" height="272.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-gT-mi7" userLabel="Next Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="85" width="214" height="100"/>
+                                                <rect key="frame" x="100" y="86" width="214" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="iP6-6r-US1"/>
                                                 </constraints>
@@ -186,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-lN-YOC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="110"/>
+            <point key="canvasLocation" x="1061" y="110"/>
         </scene>
     </scenes>
     <resources>

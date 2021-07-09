@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E914DC7B2698338300788E63 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E914DC7A2698338300788E63 /* LessonsViewController.swift */; };
 		E965030C26928E5C00A57018 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E965030B26928E5C00A57018 /* Question.swift */; };
 		E9A566892694453B00FA3523 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A566882694453B00FA3523 /* ResultViewController.swift */; };
 		E9B12506268EB48E00994623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B12505268EB48E00994623 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E914DC7A2698338300788E63 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		E965030B26928E5C00A57018 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		E9A566882694453B00FA3523 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		E9B12502268EB48E00994623 /* Japanese Flash Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Japanese Flash Cards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +54,7 @@
 			children = (
 				E9B12509268EB48E00994623 /* QuizViewController.swift */,
 				E9A566882694453B00FA3523 /* ResultViewController.swift */,
+				E914DC7A2698338300788E63 /* LessonsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				E9B1250A268EB48E00994623 /* QuizViewController.swift in Sources */,
 				E965030C26928E5C00A57018 /* Question.swift in Sources */,
 				E9B12506268EB48E00994623 /* AppDelegate.swift in Sources */,
+				E914DC7B2698338300788E63 /* LessonsViewController.swift in Sources */,
 				E9B12508268EB48E00994623 /* SceneDelegate.swift in Sources */,
 				E9A566892694453B00FA3523 /* ResultViewController.swift in Sources */,
 				E9D3CB30269538B100B65BB7 /* WhiteBorderButton.swift in Sources */,
