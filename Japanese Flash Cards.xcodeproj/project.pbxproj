@@ -17,6 +17,7 @@
 		E9B1250F268EB48F00994623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B1250E268EB48F00994623 /* Assets.xcassets */; };
 		E9B12512268EB48F00994623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B12510268EB48F00994623 /* LaunchScreen.storyboard */; };
 		E9B4AA29269872BF007A75E3 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B4AA28269872BF007A75E3 /* Lesson.swift */; };
+		E9BE5CF4269997F600269796 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9BE5CF2269997F600269796 /* DataModel.xcdatamodeld */; };
 		E9D3CB2D26952F4100B65BB7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D3CB2C26952F4100B65BB7 /* Colors.xcassets */; };
 		E9D3CB30269538B100B65BB7 /* WhiteBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3CB2F269538B100B65BB7 /* WhiteBorderButton.swift */; };
 		E9E9EC212692EFCD00F05ECE /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9EC202692EFCD00F05ECE /* QuizBrain.swift */; };
@@ -35,6 +36,7 @@
 		E9B12511268EB48F00994623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9B12513268EB48F00994623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9B4AA28269872BF007A75E3 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		E9BE5CF3269997F600269796 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		E9D3CB2C26952F4100B65BB7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E9D3CB2F269538B100B65BB7 /* WhiteBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBorderButton.swift; sourceTree = "<group>"; };
 		E9E9EC202692EFCD00F05ECE /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				E965030B26928E5C00A57018 /* Question.swift */,
 				E9E9EC202692EFCD00F05ECE /* QuizBrain.swift */,
 				E9B4AA28269872BF007A75E3 /* Lesson.swift */,
+				E9BE5CF2269997F600269796 /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9B4AA29269872BF007A75E3 /* Lesson.swift in Sources */,
+				E9BE5CF4269997F600269796 /* DataModel.xcdatamodeld in Sources */,
 				E9E9EC212692EFCD00F05ECE /* QuizBrain.swift in Sources */,
 				E9B1250A268EB48E00994623 /* QuizViewController.swift in Sources */,
 				E965030C26928E5C00A57018 /* Question.swift in Sources */,
@@ -401,6 +405,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9BE5CF2269997F600269796 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9BE5CF3269997F600269796 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = E9BE5CF3269997F600269796 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E9B124FA268EB48E00994623 /* Project object */;
 }
