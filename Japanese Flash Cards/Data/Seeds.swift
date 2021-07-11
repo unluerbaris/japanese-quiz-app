@@ -25,7 +25,7 @@ class Seeds {
             print("Data removing error \(error)")
         }
         
-        let lessonsFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Question")
+        let lessonsFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Lesson")
         let lessonsDeleteRequest = NSBatchDeleteRequest(fetchRequest: lessonsFetchRequest)
 
         do {
@@ -56,6 +56,9 @@ class Seeds {
         
         saveLesson()
         loadLesson()
+        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        
         return lesson!
     }
     
