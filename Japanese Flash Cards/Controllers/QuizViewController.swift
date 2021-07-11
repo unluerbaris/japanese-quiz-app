@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class QuizViewController: UIViewController {
 
@@ -20,73 +19,18 @@ class QuizViewController: UIViewController {
     var questionNumber = 0
     var correctScore = 0 // refresh this value at the end of the quiz
     var wrongCount = 0 // refresh this value for next question
-    var questionsArray = [Question]()
     var lesson: Lesson?
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let persistentStoreCoordinator = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.persistentStoreCoordinator
-
+    let seeds = Seeds()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let questionsFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Question")
-        let questionsDeleteRequest = NSBatchDeleteRequest(fetchRequest: questionsFetchRequest)
-
-        do {
-            try persistentStoreCoordinator.execute(questionsDeleteRequest, with: context)
-        } catch let error as NSError {
-            print("Data removing error \(error)")
-        }
-        
-        let lessonsFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Question")
-        let lessonsDeleteRequest = NSBatchDeleteRequest(fetchRequest: lessonsFetchRequest)
-
-        do {
-            try persistentStoreCoordinator.execute(lessonsDeleteRequest, with: context)
-        } catch let error as NSError {
-            print("Data removing error \(error)")
-        }
-        
-        // save them somewhere else
-        let question1 = Question(context: context)
-        question1.text = "月"
-        question1.answers = ["つき","き","にち","に"]
-        question1.correctAnswer = "つき"
-        let question2 = Question(context: context)
-        question2.text = "日"
-        question2.answers = ["き","ひ","ち","は"]
-        question2.correctAnswer = "ひ"
-        questionsArray.append(question1)
-        questionsArray.append(question2)
-        lesson = Lesson(context: context)
-        lesson?.isSuccessful = false
-        lesson?.lessonIndex = 0
-        lesson?.quiz = questionsArray
-        
-        saveLesson()
-        loadLesson()
+        lesson = seeds.seedData()
         updateUI()
     }
     
-    func saveLesson() {
-        do {
-            try context.save()
-        } catch {
-            print("Error saving context \(error)")
-        }
-    }
-    
-    func loadLesson() {
-        let request : NSFetchRequest<Question> = Question.fetchRequest()
-        do {
-            questionsArray = try context.fetch(request)
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
-    }
-    
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        if sender.currentTitle! == questionsArray[questionNumber].correctAnswer {
+        if sender.currentTitle! == lesson?.quiz![questionNumber].correctAnswer {
             if wrongCount == 0 {
                 correctScore += 1
             }
@@ -108,7 +52,7 @@ class QuizViewController: UIViewController {
     
     @objc func goToNextQuestion() {
         wrongCount = 0
-        if questionNumber >= questionsArray.count - 1 {
+        if questionNumber >= (lesson?.quiz!.count)! - 1 {
             questionNumber = 0
             correctScore = 0
         } else {
@@ -119,7 +63,7 @@ class QuizViewController: UIViewController {
     }
     
     func isLastQuestion() -> Bool {
-        if questionNumber >= questionsArray.count - 1 {
+        if questionNumber >= (lesson?.quiz!.count)! - 1 {
             return true
         }
         return false
@@ -130,15 +74,15 @@ class QuizViewController: UIViewController {
     }
     
     func shuffleAnswers() {
-        questionsArray[questionNumber].answers?.shuffle()
+        lesson?.quiz![questionNumber].answers?.shuffle()
     }
     
     func getProgress() -> Float {
-        return Float(questionNumber) / Float(questionsArray.count)
+        return Float(questionNumber) / Float((lesson?.quiz!.count)!)
     }
 
     func getResult() -> Int {
-        return Int((Float(correctScore) / Float(questionsArray.count)) * 100)
+        return Int((Float(correctScore) / Float((lesson?.quiz!.count)!)) * 100)
     }
     
     func updateUI() {
@@ -149,13 +93,13 @@ class QuizViewController: UIViewController {
         buttonD.setConfig()
         
         // Update questions and answers
-        questionLabel.text = questionsArray[questionNumber].text
+        questionLabel.text = lesson?.quiz![questionNumber].text
         
         shuffleAnswers()
-        buttonA.setTitle(questionsArray[questionNumber].answers?[0], for: .normal)
-        buttonB.setTitle(questionsArray[questionNumber].answers?[1], for: .normal)
-        buttonC.setTitle(questionsArray[questionNumber].answers?[2], for: .normal)
-        buttonD.setTitle(questionsArray[questionNumber].answers?[3], for: .normal)
+        buttonA.setTitle(lesson?.quiz![questionNumber].answers?[0], for: .normal)
+        buttonB.setTitle(lesson?.quiz![questionNumber].answers?[1], for: .normal)
+        buttonC.setTitle(lesson?.quiz![questionNumber].answers?[2], for: .normal)
+        buttonD.setTitle(lesson?.quiz![questionNumber].answers?[3], for: .normal)
         
         // Progress Bar
         progressBar.progress = getProgress()
