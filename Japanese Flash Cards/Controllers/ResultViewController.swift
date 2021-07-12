@@ -12,7 +12,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     var resultValue: String?
-    var lesson: Lesson?
+    var quiz: Quiz?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +20,9 @@ class ResultViewController: UIViewController {
         resultLabel.text = "\(resultValue!)%"
         
         if Int(resultValue!)! >= 70 {
-            lesson?.isSuccessful = true
+            quiz?.isSuccessful = true
         } else {
-            lesson?.isSuccessful = false
+            quiz?.isSuccessful = false
         }
     }
     
@@ -31,7 +31,7 @@ class ResultViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToLessonsMenu" && lesson?.isSuccessful == true {
+        if segue.identifier == "goToLessonsMenu" && quiz?.isSuccessful == true {
             let destinationVC = segue.destination as! LessonsViewController
             destinationVC.isLessonSuccessful = true
         }

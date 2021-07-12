@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Lesson" representedClassName=".Lesson" syncable="YES">
+    <entity name="Quiz" representedClassName=".Quiz" syncable="YES">
         <attribute name="isSuccessful" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="lessonIndex" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="quiz" attributeType="Transformable" customClassName="[Question]"/>
-    </entity>
-    <entity name="Question" representedClassName=".Question" syncable="YES">
-        <attribute name="answers" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="correctAnswer" attributeType="String"/>
-        <attribute name="text" attributeType="String"/>
+        <attribute name="quizIndex" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Lesson" positionX="-63" positionY="9" width="128" height="74"/>
-        <element name="Question" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Quiz" positionX="-63" positionY="-18" width="128" height="59"/>
     </elements>
 </model>
