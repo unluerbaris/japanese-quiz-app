@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class QuizViewController: UIViewController {
 
@@ -20,18 +21,19 @@ class QuizViewController: UIViewController {
     var correctScore = 0 // refresh this value at the end of the quiz
     var wrongCount = 0 // refresh this value for next question
     var quiz: Quiz?
-    let seeds = Seeds()
     var quizData = QuizData()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        quiz = seeds.seedData()
+        loadQuiz()
         updateUI()
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        if sender.currentTitle! == quizData.n5[Int(quiz!.quizIndex)][questionNumber].correctAnswer {
+        if sender.currentTitle! == quiz.questions[questionNumber].correctAnswer {
             if wrongCount == 0 {
                 correctScore += 1
             }
@@ -84,6 +86,17 @@ class QuizViewController: UIViewController {
 
     func getResult() -> Int {
         return Int((Float(correctScore) / Float((quizData.n5[Int(quiz!.quizIndex)].count))) * 100)
+    }
+    
+    func loadQuiz() {
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        request.predicate = NSPredicate(format: "quizIndex CONTAINS %@", 0)
+        
+        do {
+            quiz = try context.fetch(request)[0]
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
     }
     
     func updateUI() {

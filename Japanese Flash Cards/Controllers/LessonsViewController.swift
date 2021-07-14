@@ -12,14 +12,14 @@ class LessonsViewController: UIViewController {
     // TODO: Change this after creating database
     @IBOutlet weak var lessonOneButton: WhiteBorderButton!
     
-    // TODO: Change this after creating database
-    var isLessonSuccessful = false
+    let seeds = Seeds()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Change this after creating database
-        if isLessonSuccessful {
+        seeds.seedData()
+        
+        if seeds.getQuizArray()[0].isSuccessful {
             lessonOneButton.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
             lessonOneButton.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
         }

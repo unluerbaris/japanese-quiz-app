@@ -2,7 +2,7 @@
 //  Quiz+CoreDataProperties.swift
 //  Japanese Flash Cards
 //
-//  Created by Baris Unluer on 2021/07/12.
+//  Created by Baris Unluer on 2021/07/14.
 //
 //
 
@@ -18,6 +18,24 @@ extension Quiz {
 
     @NSManaged public var isSuccessful: Bool
     @NSManaged public var quizIndex: Int64
+    @NSManaged public var questions: NSSet?
+
+}
+
+// MARK: Generated accessors for questions
+extension Quiz {
+
+    @objc(addQuestionsObject:)
+    @NSManaged public func addToQuestions(_ value: Question)
+
+    @objc(removeQuestionsObject:)
+    @NSManaged public func removeFromQuestions(_ value: Question)
+
+    @objc(addQuestions:)
+    @NSManaged public func addToQuestions(_ values: NSSet)
+
+    @objc(removeQuestions:)
+    @NSManaged public func removeFromQuestions(_ values: NSSet)
 
 }
 
