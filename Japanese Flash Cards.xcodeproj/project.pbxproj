@@ -13,7 +13,6 @@
 		E915F441269F195E0014CB87 /* Quiz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E915F43D269F195E0014CB87 /* Quiz+CoreDataClass.swift */; };
 		E915F442269F195E0014CB87 /* Quiz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E915F43E269F195E0014CB87 /* Quiz+CoreDataProperties.swift */; };
 		E9763750269B15E900594B4D /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976374F269B15E900594B4D /* Seeds.swift */; };
-		E97C85F3269C37A400EF4FAC /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C85F2269C37A400EF4FAC /* QuizData.swift */; };
 		E9A566892694453B00FA3523 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A566882694453B00FA3523 /* ResultViewController.swift */; };
 		E9B12506268EB48E00994623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B12505268EB48E00994623 /* AppDelegate.swift */; };
 		E9B12508268EB48E00994623 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B12507268EB48E00994623 /* SceneDelegate.swift */; };
@@ -33,7 +32,6 @@
 		E915F43D269F195E0014CB87 /* Quiz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E915F43E269F195E0014CB87 /* Quiz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E976374F269B15E900594B4D /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
-		E97C85F2269C37A400EF4FAC /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		E9A566882694453B00FA3523 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		E9B12502268EB48E00994623 /* Japanese Flash Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Japanese Flash Cards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B12505268EB48E00994623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				E976374F269B15E900594B4D /* Seeds.swift */,
-				E97C85F2269C37A400EF4FAC /* QuizData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 				E9B12508268EB48E00994623 /* SceneDelegate.swift in Sources */,
 				E915F440269F195E0014CB87 /* Question+CoreDataProperties.swift in Sources */,
 				E9A566892694453B00FA3523 /* ResultViewController.swift in Sources */,
-				E97C85F3269C37A400EF4FAC /* QuizData.swift in Sources */,
 				E915F441269F195E0014CB87 /* Quiz+CoreDataClass.swift in Sources */,
 				E9D3CB30269538B100B65BB7 /* WhiteBorderButton.swift in Sources */,
 				E9763750269B15E900594B4D /* Seeds.swift in Sources */,
