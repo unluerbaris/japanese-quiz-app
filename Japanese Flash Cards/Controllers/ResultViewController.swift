@@ -17,9 +17,9 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resultLabel.text = "\(resultValue!)%"
+        resultLabel.text = "\(resultValue ?? "No Value")%"
         
-        if Int(resultValue!)! >= 70 {
+        if Int(resultValue ?? "0")! >= 70 {
             quiz?.isSuccessful = true
         } else {
             quiz?.isSuccessful = false

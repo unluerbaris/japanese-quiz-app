@@ -35,6 +35,17 @@ class QuizViewController: UIViewController {
         updateUI()
     }
     
+    func loadQuiz() {
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        request.predicate = NSPredicate(format: "quizIndex == %i", quizIndex!)
+        
+        do {
+            quiz = try context.fetch(request)[0]
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+    }
+    
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         if sender.currentTitle! == questions![questionNumber].correctAnswer {
             if wrongCount == 0 {
@@ -89,17 +100,6 @@ class QuizViewController: UIViewController {
 
     func getResult() -> Int {
         return Int((Float(correctScore) / Float((questions!.count))) * 100)
-    }
-    
-    func loadQuiz() {
-        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
-        request.predicate = NSPredicate(format: "quizIndex == %i", quizIndex!)
-        
-        do {
-            quiz = try context.fetch(request)[0]
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
     }
     
     func updateUI() {

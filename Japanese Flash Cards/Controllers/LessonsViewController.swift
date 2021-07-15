@@ -19,17 +19,21 @@ class LessonsViewController: UIViewController {
 //        seeds.seedData()
         quizArray = seeds.getQuizArray()
         
-        for quiz in quizArray! {
-            let button = WhiteBorderButton()
-            button.setTitle("\(quiz.quizIndex)", for: .normal)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            lessonsStackView.addArrangedSubview(button)
-            button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
-            
-            if quiz.isSuccessful {
-                button.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
-                button.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
+        if let safeQuizArray = quizArray {
+            for quiz in safeQuizArray {
+                let button = WhiteBorderButton()
+                button.setTitle("\(quiz.quizIndex)", for: .normal)
+                button.translatesAutoresizingMaskIntoConstraints = false
+                lessonsStackView.addArrangedSubview(button)
+                button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
+                
+                if quiz.isSuccessful {
+                    button.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
+                    button.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
+                }
             }
+        } else {
+            print("quizArray has nil value!")
         }
     }
     
@@ -41,7 +45,7 @@ class LessonsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToLesson" {
             let destinationVC = segue.destination as! QuizViewController
-            destinationVC.quizIndex = Int64((targetButton?.currentTitle)!)
+            destinationVC.quizIndex = Int64((targetButton?.currentTitle) ?? "123")
         }
     }
 }
