@@ -26,12 +26,13 @@ class LessonsViewController: UIViewController {
             button.translatesAutoresizingMaskIntoConstraints = false
             lessonsStackView.addArrangedSubview(button)
             button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
+            
+            if quiz.isSuccessful {
+                button.backgroundColor = UIColor.green
+//                button.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
+//                button.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
+            }
         }
-        
-//        if seeds.getQuizArray()[0].isSuccessful {
-//            lessonOneButton.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
-//            lessonOneButton.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
-//        }
     }
     
     @objc private func action(sender: UIButton) {
