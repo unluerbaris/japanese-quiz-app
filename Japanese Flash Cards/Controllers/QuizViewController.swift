@@ -29,13 +29,9 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("started loading")
         loadQuiz()
-        print("loaded")
         questions = quiz?.questions?.allObjects as? [Question]
-        print("questions are ready")
         updateUI()
-        print("ui is ready")
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {

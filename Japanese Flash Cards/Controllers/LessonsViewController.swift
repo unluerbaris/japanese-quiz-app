@@ -8,16 +8,24 @@
 import UIKit
 
 class LessonsViewController: UIViewController {
-    
-    // TODO: Change this after creating database
-    @IBOutlet weak var lessonOneButton: WhiteBorderButton!
-    
+        
+    @IBOutlet weak var lessonsStackView: UIStackView!
     let seeds = Seeds()
+    var quizArray: [Quiz]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        seeds.seedData()
+        quizArray = seeds.getQuizArray()
         
-        seeds.seedData()
+        for quiz in quizArray! {
+            let button = UIButton()
+            button.setTitle("\(quiz.quizIndex)", for: .normal)
+            button.backgroundColor = UIColor.red
+            button.translatesAutoresizingMaskIntoConstraints = false
+            lessonsStackView.addArrangedSubview(button)
+            button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
+        }
         
 //        if seeds.getQuizArray()[0].isSuccessful {
 //            lessonOneButton.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
@@ -25,17 +33,7 @@ class LessonsViewController: UIViewController {
 //        }
     }
     
-    @IBAction func lessonButtonPressed(_ sender: UIButton) {
+    @objc private func action(sender: UIButton) {
         self.performSegue(withIdentifier: "goToLesson", sender: self)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

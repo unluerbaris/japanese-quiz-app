@@ -119,61 +119,6 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="CWV-RT-fCV" userLabel="Lessons View">
                                 <rect key="frame" x="0.0" y="94" width="414" height="718"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXe-xr-8eS" userLabel="Lesson 1 Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="0.0" width="150" height="103.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="e8p-ew-8L0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Lesson 1">
-                                            <color key="titleColor" name="Accent"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPressed:" destination="1rG-Ob-uBB" eventType="touchUpInside" id="94c-Kx-pjW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roa-Pj-sig" userLabel="Lesson 2 Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="153.5" width="150" height="103.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="doc-xk-M8A"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Lesson 2">
-                                            <color key="titleColor" name="Accent"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEE-U1-0j0" userLabel="Lesson 3  Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="307" width="150" height="104"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="aCI-vT-89u"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Lesson 3">
-                                            <color key="titleColor" name="Accent"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ui-Ai-8Jc" userLabel="Lesson 4  Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="461" width="150" height="103.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="yf3-A8-0CU"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Lesson 4">
-                                            <color key="titleColor" name="Accent"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE1-eI-4P5" userLabel="Lesson 5  Button" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="614.5" width="150" height="103.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="TpC-ge-3xi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Lesson 5">
-                                            <color key="titleColor" name="Accent"/>
-                                        </state>
-                                    </button>
-                                </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6qX-rA-DIv"/>
@@ -186,7 +131,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lessonOneButton" destination="JXe-xr-8eS" id="jEg-fH-ZEY"/>
+                        <outlet property="lessonsStackView" destination="CWV-RT-fCV" id="GMJ-Bv-sA8"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLesson" modalPresentationStyle="fullScreen" id="s6d-54-vEh"/>
                     </connections>
                 </viewController>
