@@ -10,6 +10,7 @@ import UIKit
 class LessonsViewController: UIViewController {
         
     @IBOutlet weak var lessonsStackView: UIStackView!
+    var targetButton: UIButton?
     let seeds = Seeds()
     var quizArray: [Quiz]?
     
@@ -34,6 +35,14 @@ class LessonsViewController: UIViewController {
     }
     
     @objc private func action(sender: UIButton) {
+        targetButton = sender
         self.performSegue(withIdentifier: "goToLesson", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToLesson" {
+            let destinationVC = segue.destination as! QuizViewController
+            destinationVC.quizIndex = Int64((targetButton?.currentTitle)!)
+        }
     }
 }

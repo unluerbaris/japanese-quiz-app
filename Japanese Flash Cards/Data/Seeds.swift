@@ -48,6 +48,11 @@ class Seeds {
         question2.text = "人"
         question2.answers = ["ひと","き","つき","ひげ"]
         question2.correctAnswer = "ひと"
+        
+        let questionTest = Question(context: context)
+        questionTest.text = "test"
+        questionTest.answers = ["t","e","s","t"]
+        questionTest.correctAnswer = "t"
 
         let quiz0 = Quiz(context: context)
         quiz0.isSuccessful = false
@@ -58,10 +63,8 @@ class Seeds {
         
         let quiz1 = Quiz(context: context)
         quiz1.isSuccessful = false
-        quiz1.quizIndex = 0
-        quiz1.addToQuestions(question0)
-        quiz1.addToQuestions(question1)
-        quiz1.addToQuestions(question2)
+        quiz1.quizIndex = 1
+        quiz1.addToQuestions(questionTest)
 
         saveQuiz()
         

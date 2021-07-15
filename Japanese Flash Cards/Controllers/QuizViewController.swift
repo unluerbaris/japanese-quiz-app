@@ -17,6 +17,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var buttonD: WhiteBorderButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
+    var quizIndex: Int64?
     var questionNumber = 0
     var correctScore = 0 // refresh this value at the end of the quiz
     var wrongCount = 0 // refresh this value for next question
@@ -92,7 +93,7 @@ class QuizViewController: UIViewController {
     
     func loadQuiz() {
         let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
-        request.predicate = NSPredicate(format: "quizIndex == %i", 0)
+        request.predicate = NSPredicate(format: "quizIndex == %i", quizIndex!)
         
         do {
             quiz = try context.fetch(request)[0]
