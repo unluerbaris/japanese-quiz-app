@@ -21,19 +21,25 @@ class QuizViewController: UIViewController {
     var correctScore = 0 // refresh this value at the end of the quiz
     var wrongCount = 0 // refresh this value for next question
     var quiz: Quiz?
-    var quizData = QuizData()
+    var questions: [Question]?
+    var answers: [String]?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("started loading")
         loadQuiz()
+        print("loaded")
+        questions = quiz?.questions?.allObjects as? [Question]
+        print("questions are ready")
         updateUI()
+        print("ui is ready")
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        if sender.currentTitle! == quiz.questions[questionNumber].correctAnswer {
+        if sender.currentTitle! == questions![questionNumber].correctAnswer {
             if wrongCount == 0 {
                 correctScore += 1
             }
@@ -55,7 +61,7 @@ class QuizViewController: UIViewController {
     
     @objc func goToNextQuestion() {
         wrongCount = 0
-        if questionNumber >= (quizData.n5[Int(quiz!.quizIndex)].count) - 1 {
+        if questionNumber >= questions!.count - 1 {
             questionNumber = 0
             correctScore = 0
         } else {
@@ -66,7 +72,7 @@ class QuizViewController: UIViewController {
     }
     
     func isLastQuestion() -> Bool {
-        if questionNumber >= (quizData.n5[Int(quiz!.quizIndex)].count) - 1 {
+        if questionNumber >= questions!.count - 1 {
             return true
         }
         return false
@@ -77,20 +83,20 @@ class QuizViewController: UIViewController {
     }
     
     func shuffleAnswers() {
-        quizData.n5[Int(quiz!.quizIndex)][questionNumber].answers.shuffle()
+        answers!.shuffle()
     }
     
     func getProgress() -> Float {
-        return Float(questionNumber) / Float((quizData.n5[Int(quiz!.quizIndex)].count))
+        return Float(questionNumber) / Float((questions!.count))
     }
 
     func getResult() -> Int {
-        return Int((Float(correctScore) / Float((quizData.n5[Int(quiz!.quizIndex)].count))) * 100)
+        return Int((Float(correctScore) / Float((questions!.count))) * 100)
     }
     
     func loadQuiz() {
         let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
-        request.predicate = NSPredicate(format: "quizIndex CONTAINS %@", 0)
+        request.predicate = NSPredicate(format: "quizIndex == %i", 0)
         
         do {
             quiz = try context.fetch(request)[0]
@@ -107,13 +113,15 @@ class QuizViewController: UIViewController {
         buttonD.setConfig()
         
         // Update questions and answers
-        questionLabel.text = quizData.n5[Int(quiz!.quizIndex)][questionNumber].text
+        questionLabel.text = questions![questionNumber].text
+        
+        answers = questions![questionNumber].answers
         
         shuffleAnswers()
-        buttonA.setTitle(quizData.n5[Int(quiz!.quizIndex)][questionNumber].answers[0], for: .normal)
-        buttonB.setTitle(quizData.n5[Int(quiz!.quizIndex)][questionNumber].answers[1], for: .normal)
-        buttonC.setTitle(quizData.n5[Int(quiz!.quizIndex)][questionNumber].answers[2], for: .normal)
-        buttonD.setTitle(quizData.n5[Int(quiz!.quizIndex)][questionNumber].answers[3], for: .normal)
+        buttonA.setTitle(answers![0], for: .normal)
+        buttonB.setTitle(answers![1], for: .normal)
+        buttonC.setTitle(answers![2], for: .normal)
+        buttonD.setTitle(answers![3], for: .normal)
         
         // Progress Bar
         progressBar.progress = getProgress()

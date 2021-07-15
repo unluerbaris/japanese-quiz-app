@@ -19,10 +19,10 @@ class LessonsViewController: UIViewController {
         
         seeds.seedData()
         
-        if seeds.getQuizArray()[0].isSuccessful {
-            lessonOneButton.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
-            lessonOneButton.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
-        }
+//        if seeds.getQuizArray()[0].isSuccessful {
+//            lessonOneButton.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
+//            lessonOneButton.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
+//        }
     }
     
     @IBAction func lessonButtonPressed(_ sender: UIButton) {

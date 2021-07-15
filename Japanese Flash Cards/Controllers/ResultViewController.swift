@@ -29,11 +29,4 @@ class ResultViewController: UIViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "goToLessonsMenu", sender: self)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToLessonsMenu" && quiz?.isSuccessful == true {
-            let destinationVC = segue.destination as! LessonsViewController
-            destinationVC.isLessonSuccessful = true
-        }
-    }
 }
