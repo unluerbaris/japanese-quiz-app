@@ -10,7 +10,7 @@ import UIKit
 class LessonsViewController: UIViewController {
         
     @IBOutlet weak var lessonsStackView: UIStackView!
-    var targetButton: UIButton?
+    var targetButton: WhiteBorderButton?
     let seeds = Seeds()
     var quizArray: [Quiz]?
     
@@ -20,22 +20,20 @@ class LessonsViewController: UIViewController {
         quizArray = seeds.getQuizArray()
         
         for quiz in quizArray! {
-            let button = UIButton()
+            let button = WhiteBorderButton()
             button.setTitle("\(quiz.quizIndex)", for: .normal)
-            button.backgroundColor = UIColor.red
             button.translatesAutoresizingMaskIntoConstraints = false
             lessonsStackView.addArrangedSubview(button)
             button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
             
             if quiz.isSuccessful {
-                button.backgroundColor = UIColor.green
-//                button.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
-//                button.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
+                button.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
+                button.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
             }
         }
     }
     
-    @objc private func action(sender: UIButton) {
+    @objc private func action(sender: WhiteBorderButton) {
         targetButton = sender
         self.performSegue(withIdentifier: "goToLesson", sender: self)
     }

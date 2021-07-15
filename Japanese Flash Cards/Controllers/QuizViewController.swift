@@ -103,7 +103,7 @@ class QuizViewController: UIViewController {
     }
     
     func updateUI() {
-        // Button styling
+        // Reset button styling
         buttonA.setConfig()
         buttonB.setConfig()
         buttonC.setConfig()
