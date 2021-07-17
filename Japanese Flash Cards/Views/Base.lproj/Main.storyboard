@@ -116,22 +116,10 @@
                     <view key="view" contentMode="scaleToFill" id="J5d-gE-WPO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="CWV-RT-fCV" userLabel="Lessons View">
-                                <rect key="frame" x="0.0" y="94" width="414" height="718"/>
-                            </stackView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6qX-rA-DIv"/>
                         <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="6qX-rA-DIv" firstAttribute="bottom" secondItem="CWV-RT-fCV" secondAttribute="bottom" constant="50" id="DhY-SS-I1o"/>
-                            <constraint firstItem="CWV-RT-fCV" firstAttribute="leading" secondItem="6qX-rA-DIv" secondAttribute="leading" id="FdH-IS-iex"/>
-                            <constraint firstItem="6qX-rA-DIv" firstAttribute="trailing" secondItem="CWV-RT-fCV" secondAttribute="trailing" id="o8Q-NW-qTy"/>
-                            <constraint firstItem="CWV-RT-fCV" firstAttribute="top" secondItem="6qX-rA-DIv" secondAttribute="top" constant="50" id="tPS-f7-PRh"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="lessonsStackView" destination="CWV-RT-fCV" id="GMJ-Bv-sA8"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLesson" modalPresentationStyle="fullScreen" id="s6d-54-vEh"/>
                     </connections>
                 </viewController>
