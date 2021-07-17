@@ -90,6 +90,6 @@ class Seeds {
     
     func getQuizArray() -> [Quiz] {
         loadQuiz()
-        return quizArray!
+        return quizArray!.reversed()
     }
 }
