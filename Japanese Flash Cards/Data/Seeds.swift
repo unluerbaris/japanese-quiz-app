@@ -35,10 +35,10 @@ class Seeds {
             print("Data removing error \(error)")
         }
         
-        for quiz in data.n5 {
+        for (index, quiz) in data.n5.enumerated() {
             let newQuiz = Quiz(context: context)
             newQuiz.isSuccessful = false
-            newQuiz.quizIndex = 0
+            newQuiz.quizIndex = Int64(index)
             
             for question in quiz {
                 let newQuestion = Question(context: context)
