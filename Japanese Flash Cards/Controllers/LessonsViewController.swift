@@ -32,10 +32,8 @@ class LessonsViewController: UIViewController {
             for quiz in safeQuizArray {
                 
                 buttonYPos = (buttonHeight + buttonSpacing) * buttonCounter
-                print(buttonYPos)
                 let button = TwoLinedButton(frame: CGRect(x: 0, y: buttonYPos, width: 200, height: buttonHeight))
                 
-                button.translatesAutoresizingMaskIntoConstraints = false
                 scrollView.addSubview(button)
                 button.center.x = view.center.x
                 button.configure(with: TwoLinedButtonViewModel(primaryText: "Lesson \(quiz.quizIndex)", secondaryText: "Start Lesson"))

@@ -29,7 +29,6 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadQuiz()
         questions = quiz?.questions?.allObjects as? [Question]
         updateUI()

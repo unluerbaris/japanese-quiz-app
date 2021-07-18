@@ -2,7 +2,7 @@
 //  Question+CoreDataProperties.swift
 //  Japanese Flash Cards
 //
-//  Created by Baris Unluer on 2021/07/14.
+//  Created by Baris Unluer on 2021/07/18.
 //
 //
 
@@ -16,9 +16,9 @@ extension Question {
         return NSFetchRequest<Question>(entityName: "Question")
     }
 
-    @NSManaged public var text: String?
     @NSManaged public var answers: [String]?
     @NSManaged public var correctAnswer: String?
+    @NSManaged public var text: String?
     @NSManaged public var quiz: NSSet?
 
 }
