@@ -35,19 +35,21 @@ class Seeds {
             print("Data removing error \(error)")
         }
         
-        let quiz = Quiz(context: context)
-        quiz.isSuccessful = false
-        quiz.quizIndex = 0
-        
-        for question in data.n5 {
-            let newQuestion = Question(context: context)
-            newQuestion.text = question["text"] as? String
-            newQuestion.answers = question["answers"] as? [String]
-            newQuestion.correctAnswer = question["correctAnswer"] as? String
+        for quiz in data.n5 {
+            let newQuiz = Quiz(context: context)
+            newQuiz.isSuccessful = false
+            newQuiz.quizIndex = 0
             
-            quiz.addToQuestions(newQuestion)
+            for question in quiz {
+                let newQuestion = Question(context: context)
+                newQuestion.text = question["text"] as? String
+                newQuestion.answers = question["answers"] as? [String]
+                newQuestion.correctAnswer = question["correctAnswer"] as? String
+                
+                newQuiz.addToQuestions(newQuestion)
+            }
         }
-
+        
         saveQuiz()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
