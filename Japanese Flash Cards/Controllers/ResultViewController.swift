@@ -13,6 +13,7 @@ class ResultViewController: UIViewController {
     
     var resultValue: String?
     var quiz: Quiz?
+    let seeds = Seeds()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,10 @@ class ResultViewController: UIViewController {
         
         if Int(resultValue ?? "0")! >= 70 {
             quiz?.isSuccessful = true
+            seeds.saveQuiz()
         } else {
             quiz?.isSuccessful = false
+            seeds.saveQuiz() // this line might be deleted in the future
         }
     }
     
