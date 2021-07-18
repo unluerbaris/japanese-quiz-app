@@ -11,6 +11,7 @@ import CoreData
 class Seeds {
     
     var quizArray: [Quiz]?
+    let data = Data()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let persistentStoreCoordinator = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.persistentStoreCoordinator
@@ -33,38 +34,19 @@ class Seeds {
         } catch let error as NSError {
             print("Data removing error \(error)")
         }
-
-        let question0 = Question(context: context)
-        question0.text = "月"
-        question0.answers = ["つき","き","にち","に"]
-        question0.correctAnswer = "つき"
-
-        let question1 = Question(context: context)
-        question1.text = "日"
-        question1.answers = ["き","ひ","ち","は"]
-        question1.correctAnswer = "ひ"
-
-        let question2 = Question(context: context)
-        question2.text = "人"
-        question2.answers = ["ひと","き","つき","ひげ"]
-        question2.correctAnswer = "ひと"
         
-        let questionTest = Question(context: context)
-        questionTest.text = "test"
-        questionTest.answers = ["t","e","s","t"]
-        questionTest.correctAnswer = "t"
-
-        let quiz0 = Quiz(context: context)
-        quiz0.isSuccessful = false
-        quiz0.quizIndex = 0
-        quiz0.addToQuestions(question0)
-        quiz0.addToQuestions(question1)
-        quiz0.addToQuestions(question2)
+        let quiz = Quiz(context: context)
+        quiz.isSuccessful = false
+        quiz.quizIndex = 0
         
-        let quiz1 = Quiz(context: context)
-        quiz1.isSuccessful = false
-        quiz1.quizIndex = 1
-        quiz1.addToQuestions(questionTest)
+        for question in data.n5 {
+            let newQuestion = Question(context: context)
+            newQuestion.text = question["text"] as? String
+            newQuestion.answers = question["answers"] as? [String]
+            newQuestion.correctAnswer = question["correctAnswer"] as? String
+            
+            quiz.addToQuestions(newQuestion)
+        }
 
         saveQuiz()
         
