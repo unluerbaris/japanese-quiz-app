@@ -9,7 +9,7 @@ import UIKit
 
 class LessonsViewController: UIViewController {
         
-    var targetButton: WhiteBorderButton?
+    var targetButton: TwoLinedButton?
     let seeds = Seeds()
     var quizArray: [Quiz]?
     
@@ -24,32 +24,37 @@ class LessonsViewController: UIViewController {
         quizArray = seeds.getQuizArray()
         if let safeQuizArray = quizArray {
             
-            var buttonSpacing = 0
+            var buttonYPos = 0
+            var buttonCounter = 0
+            let buttonSpacing = 20
+            let buttonHeight = 80
             
             for quiz in safeQuizArray {
-                let button = WhiteBorderButton(frame: CGRect(x: 20, y: 20 + buttonSpacing, width: 200, height: 80))
-                buttonSpacing += 200
                 
-                button.setTitle("\(quiz.quizIndex)", for: .normal)
+                buttonYPos = (buttonHeight + buttonSpacing) * buttonCounter
+                print(buttonYPos)
+                let button = TwoLinedButton(frame: CGRect(x: 0, y: buttonYPos, width: 200, height: buttonHeight))
+                
                 button.translatesAutoresizingMaskIntoConstraints = false
                 scrollView.addSubview(button)
+                button.center.x = view.center.x
+                button.configure(with: TwoLinedButtonViewModel(primaryText: "Lesson \(quiz.quizIndex)", secondaryText: "Start Lesson"))
+                
                 button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
                 
                 if quiz.isSuccessful {
                     button.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
                     button.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
                 }
+                
+                buttonCounter += 1
             }
         } else {
             print("quizArray has nil value!")
         }
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//    }
-    
-    @objc private func action(sender: WhiteBorderButton) {
+    @objc private func action(sender: TwoLinedButton) {
         targetButton = sender
         self.performSegue(withIdentifier: "goToLesson", sender: self)
     }
@@ -57,7 +62,8 @@ class LessonsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToLesson" {
             let destinationVC = segue.destination as! QuizViewController
-            destinationVC.quizIndex = Int64((targetButton?.currentTitle) ?? "123")
+            let buttonTextArray = targetButton?.getPrimaryText().split(separator: " ")
+            destinationVC.quizIndex = Int64(buttonTextArray![1])
         }
     }
 }
