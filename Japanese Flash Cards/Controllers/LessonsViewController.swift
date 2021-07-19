@@ -22,6 +22,8 @@ class LessonsViewController: UIViewController {
         scrollView.contentSize = CGSize(width: view.frame.size.width, height: 800)
         
         quizArray = seeds.getQuizArray()
+        quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
+        
         if let safeQuizArray = quizArray {
             
             var buttonYPos = 0
