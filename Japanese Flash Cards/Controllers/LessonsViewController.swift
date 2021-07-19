@@ -38,7 +38,7 @@ class LessonsViewController: UIViewController {
                 
                 scrollView.addSubview(button)
                 button.center.x = view.center.x
-                button.configure(with: TwoLinedButtonViewModel(primaryText: "Lesson \(quiz.quizIndex)", secondaryText: "Start Lesson"))
+                button.configure(with: TwoLinedButtonViewModel(primaryText: "Quiz \(quiz.quizIndex + 1)", secondaryText: "Start Lesson"))
                 
                 button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
                 
@@ -63,7 +63,7 @@ class LessonsViewController: UIViewController {
         if segue.identifier == "goToLesson" {
             let destinationVC = segue.destination as! QuizViewController
             let buttonTextArray = targetButton?.getPrimaryText().split(separator: " ")
-            destinationVC.quizIndex = Int64(buttonTextArray![1])
+            destinationVC.quizIndex = Int64(buttonTextArray![1])! - Int64(1)
         }
     }
 }
