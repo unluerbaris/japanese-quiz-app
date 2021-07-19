@@ -132,6 +132,522 @@ class Data {
                 "answers": ["four people","three people","three things","four things"],
                 "correctAnswer": "four people"
             ]
+        ],
+        [
+            [
+                "text": "五",
+                "answers": ["ご","し","ろく","はち"],
+                "correctAnswer": "ご"
+            ],
+            [
+                "text": "五",
+                "answers": ["five","three","six","seven"],
+                "correctAnswer": "five"
+            ],
+            [
+                "text": "五つ",
+                "answers": ["いつつ","むっつ","よっつ","みっつ"],
+                "correctAnswer": "いつつ"
+            ],
+            [
+                "text": "五つ",
+                "answers": ["five things","three things","six things","seven things"],
+                "correctAnswer": "five things"
+            ],
+            [
+                "text": "五人",
+                "answers": ["ごにん","さんにん","ろくにん","ふたり"],
+                "correctAnswer": "ごにん"
+            ],
+            [
+                "text": "五人",
+                "answers": ["five people","three people","seven people","six people"],
+                "correctAnswer": "five people"
+            ],
+            [
+                "text": "六",
+                "answers": ["ろく","なな","はち","ご"],
+                "correctAnswer": "ろく"
+            ],
+            [
+                "text": "六",
+                "answers": ["six","five","three","seven"],
+                "correctAnswer": "six"
+            ],
+            [
+                "text": "六つ",
+                "answers": ["むっつ","いつつ","よっつ","みっつ"],
+                "correctAnswer": "むっつ"
+            ],
+            [
+                "text": "六つ",
+                "answers": ["six things","five things","three things","seven things"],
+                "correctAnswer": "six things"
+            ],
+            [
+                "text": "六人",
+                "answers": ["ろくにん","ごにん","さんにん","ふたり"],
+                "correctAnswer": "ろくにん"
+            ],
+            [
+                "text": "六人",
+                "answers": ["six people","five people","three people","seven people"],
+                "correctAnswer": "six people"
+            ]
+        ],
+        [
+            [
+                "text": "七",
+                "answers": ["しち","ろく","はち","ご"],
+                "correctAnswer": "しち"
+            ],
+            [
+                "text": "七",
+                "answers": ["seven","six","five","nine"],
+                "correctAnswer": "seven"
+            ],
+            [
+                "text": "七つ",
+                "answers": ["ななつ","むっつ","いつつ","みっつ"],
+                "correctAnswer": "ななつ"
+            ],
+            [
+                "text": "七つ",
+                "answers": ["seven things","six things","five things","eight things"],
+                "correctAnswer": "seven things"
+            ],
+            [
+                "text": "七人",
+                "answers": ["しちにん","ろくにん","ごにん","さんにん"],
+                "correctAnswer": "しちにん"
+            ],
+            [
+                "text": "七人",
+                "answers": ["seven people","six people","five people","eight people"],
+                "correctAnswer": "seven people"
+            ],
+            [
+                "text": "八",
+                "answers": ["はち","しち","ろく","ご"],
+                "correctAnswer": "はち"
+            ],
+            [
+                "text": "八",
+                "answers": ["eight","seven","six","nine"],
+                "correctAnswer": "eight"
+            ],
+            [
+                "text": "八つ",
+                "answers": ["やっつ","ななつ","むっつ","よっつ"],
+                "correctAnswer": "やっつ"
+            ],
+            [
+                "text": "八つ",
+                "answers": ["eight things","seven things","six things","five things"],
+                "correctAnswer": "eight things"
+            ],
+            [
+                "text": "八人",
+                "answers": ["はちにん","しちにん","ろくにん","ごにん"],
+                "correctAnswer": "はちにん"
+            ],
+            [
+                "text": "八人",
+                "answers": ["eight people","seven people","six people","five people"],
+                "correctAnswer": "eight people"
+            ]
+        ],
+        [
+            [
+                "text": "九",
+                "answers": ["きゅう","しち","ろく","はち"],
+                "correctAnswer": "きゅう"
+            ],
+            [
+                "text": "九",
+                "answers": ["nine","seven","six","eight"],
+                "correctAnswer": "nine"
+            ],
+            [
+                "text": "九つ",
+                "answers": ["ここのつ","ななつ","むっつ","いつつ"],
+                "correctAnswer": "ここのつ"
+            ],
+            [
+                "text": "九つ",
+                "answers": ["nine things","seven things","six things","eight things"],
+                "correctAnswer": "nine things"
+            ],
+            [
+                "text": "九人",
+                "answers": ["きゅうにん","しちにん","ろくにん","ごにん"],
+                "correctAnswer": "きゅうにん"
+            ],
+            [
+                "text": "九人",
+                "answers": ["nine people","seven people","six people","eight people"],
+                "correctAnswer": "nine people"
+            ],
+            [
+                "text": "十",
+                "answers": ["じゅう","はち","しち","ろく"],
+                "correctAnswer": "じゅう"
+            ],
+            [
+                "text": "十",
+                "answers": ["ten","eight","seven","nine"],
+                "correctAnswer": "ten"
+            ],
+            [
+                "text": "十 (counter)",
+                "answers": ["とお","やっつ","ななつ","むっつ"],
+                "correctAnswer": "とお"
+            ],
+            [
+                "text": "十 (counter)",
+                "answers": ["ten things","eight things","seven things","six things"],
+                "correctAnswer": "ten things"
+            ],
+            [
+                "text": "十人",
+                "answers": ["じゅうにん","はちにん","しちにん","ろくにん"],
+                "correctAnswer": "じゅうにん"
+            ],
+            [
+                "text": "十人",
+                "answers": ["ten people","eight people","seven people","nine people"],
+                "correctAnswer": "ten people"
+            ]
+        ],
+        [
+            [
+                "text": "百",
+                "answers": ["ひゃく","じゅう","せん","まん"],
+                "correctAnswer": "ひゃく"
+            ],
+            [
+                "text": "百",
+                "answers": ["hundred","ten","thousand","ten thousand"],
+                "correctAnswer": "hundred"
+            ],
+            [
+                "text": "千",
+                "answers": ["せん","ひゃく","じゅう","まん"],
+                "correctAnswer": "せん"
+            ],
+            [
+                "text": "千",
+                "answers": ["thousand","hundred","ten","ten thousand"],
+                "correctAnswer": "thousand"
+            ],
+            [
+                "text": "万",
+                "answers": ["まん","せん","ひゃく","じゅう"],
+                "correctAnswer": "まん"
+            ],
+            [
+                "text": "万",
+                "answers": ["ten thousand","thousand","hundred","ten"],
+                "correctAnswer": "ten thousand"
+            ],
+            [
+                "text": "円",
+                "answers": ["えん","せん","ひゃく","じゅう"],
+                "correctAnswer": "えん"
+            ],
+            [
+                "text": "円",
+                "answers": ["Japanese Yen","ten thousand","thousand","hundred"],
+                "correctAnswer": "Japanese Yen"
+            ],
+            [
+                "text": "百円",
+                "answers": ["ひゃくえん","えん","せんえん","じゅうえん"],
+                "correctAnswer": "ひゃくえん"
+            ],
+            [
+                "text": "百円",
+                "answers": ["hundred yen","Japanese Yen","ten thousand yen","thousand yen"],
+                "correctAnswer": "hundred yen"
+            ],
+            [
+                "text": "千円",
+                "answers": ["せんえん","ひゃくえん","えん","じゅうえん"],
+                "correctAnswer": "せんえん"
+            ],
+            [
+                "text": "千円",
+                "answers": ["thousand yen","hundred yen","Japanese Yen","ten thousand yen"],
+                "correctAnswer": "thousand yen"
+            ]
+        ],
+        [
+            [
+                "text": "日",
+                "answers": ["ひ","つき","すい","き"],
+                "correctAnswer": "ひ"
+            ],
+            [
+                "text": "日",
+                "answers": ["sun","moon","fire","water"],
+                "correctAnswer": "sun"
+            ],
+            [
+                "text": "日曜日",
+                "answers": ["にちようび","げつようび","すいようび","かようび"],
+                "correctAnswer": "にちようび"
+            ],
+            [
+                "text": "日曜日",
+                "answers": ["Sunday","Monday","Friday","Wednesday"],
+                "correctAnswer": "Sunday"
+            ],
+            [
+                "text": "月",
+                "answers": ["つき","ひ","すい","き"],
+                "correctAnswer": "つき"
+            ],
+            [
+                "text": "月",
+                "answers": ["moon","sun","fire","water"],
+                "correctAnswer": "moon"
+            ],
+            [
+                "text": "月曜日",
+                "answers": ["げつようび","すいようび","かようび","にちようび"],
+                "correctAnswer": "げつようび"
+            ],
+            [
+                "text": "月曜日",
+                "answers": ["Monday","Sunday","Friday","Wednesday"],
+                "correctAnswer": "Monday"
+            ],
+            [
+                "text": "火",
+                "answers": ["ひ","つき","すい","き"],
+                "correctAnswer": "ひ"
+            ],
+            [
+                "text": "火",
+                "answers": ["fire","moon","sun","water"],
+                "correctAnswer": "fire"
+            ],
+            [
+                "text": "火曜日",
+                "answers": ["かようび","げつようび","すいようび","にちようび"],
+                "correctAnswer": "かようび"
+            ],
+            [
+                "text": "火曜日",
+                "answers": ["Tuesday","Sunday","Friday","Wednesday"],
+                "correctAnswer": "Tuesday"
+            ]
+        ],
+        [
+            [
+                "text": "水",
+                "answers": ["みず","ひ","つき","き"],
+                "correctAnswer": "みず"
+            ],
+            [
+                "text": "水",
+                "answers": ["water","fire","moon","sun"],
+                "correctAnswer": "water"
+            ],
+            [
+                "text": "水曜日",
+                "answers": ["すいようび","かようび","げつようび","にちようび"],
+                "correctAnswer": "すいようび"
+            ],
+            [
+                "text": "水曜日",
+                "answers": ["Wednesday","Tuesday","Sunday","Friday"],
+                "correctAnswer": "Wednesday"
+            ],
+            [
+                "text": "木",
+                "answers": ["き","みず","ひ","つき"],
+                "correctAnswer": "き"
+            ],
+            [
+                "text": "木",
+                "answers": ["tree","water","fire","sun"],
+                "correctAnswer": "tree"
+            ],
+            [
+                "text": "木曜日",
+                "answers": ["もくようび","すいようび","かようび","にちようび"],
+                "correctAnswer": "もくようび"
+            ],
+            [
+                "text": "木曜日",
+                "answers": ["Thursday","Wednesday","Tuesday","Friday"],
+                "correctAnswer": "Thursday"
+            ],
+            [
+                "text": "お金",
+                "answers": ["おかね","おふろ","おきゃくさま","おべんとう"],
+                "correctAnswer": "おかね"
+            ],
+            [
+                "text": "お金",
+                "answers": ["money","bank","coin","car"],
+                "correctAnswer": "tree"
+            ],
+            [
+                "text": "金",
+                "answers": ["きん","じん","まん","すい"],
+                "correctAnswer": "きん"
+            ],
+            [
+                "text": "金",
+                "answers": ["gold","tree","sun","moon"],
+                "correctAnswer": "gold"
+            ],
+            [
+                "text": "金曜日",
+                "answers": ["きんようび","もくようび","かようび","にちようび"],
+                "correctAnswer": "きんようび"
+            ],
+            [
+                "text": "金曜日",
+                "answers": ["Friday","Thursday","Wednesday","Tuesday"],
+                "correctAnswer": "Friday"
+            ]
+        ],
+        [
+            [
+                "text": "土",
+                "answers": ["つち","みず","ひ","つき"],
+                "correctAnswer": "つち"
+            ],
+            [
+                "text": "土",
+                "answers": ["soil","gold","tree","moon"],
+                "correctAnswer": "soil"
+            ],
+            [
+                "text": "土曜日",
+                "answers": ["どようび","きんようび","もくようび","にちようび"],
+                "correctAnswer": "どようび"
+            ],
+            [
+                "text": "土曜日",
+                "answers": ["Saturday","Friday","Thursday","Tuesday"],
+                "correctAnswer": "Saturday"
+            ],
+            [
+                "text": "年",
+                "answers": ["とし","つち","にち","つき"],
+                "correctAnswer": "とし"
+            ],
+            [
+                "text": "年",
+                "answers": ["year","day","hour","week"],
+                "correctAnswer": "year"
+            ],
+            [
+                "text": "一年",
+                "answers": ["いちねん","いちとし","いちまん","いちご"],
+                "correctAnswer": "いちねん"
+            ],
+            [
+                "text": "一年",
+                "answers": ["one year","next day","one day","next year"],
+                "correctAnswer": "one year"
+            ],
+            [
+                "text": "今年",
+                "answers": ["ことし","きょねん","にち","とし"],
+                "correctAnswer": "ことし"
+            ],
+            [
+                "text": "今年",
+                "answers": ["this year","today","year","this week"],
+                "correctAnswer": "this year"
+            ],
+            [
+                "text": "今日",
+                "answers": ["きょう","ことし","こにち","とし"],
+                "correctAnswer": "きょう"
+            ],
+            [
+                "text": "今日",
+                "answers": ["today","day","one day","year"],
+                "correctAnswer": "today"
+            ]
+        ],
+        [
+            [
+                "text": "人",
+                "answers": ["ひと","め","みみ","くち"],
+                "correctAnswer": "ひと"
+            ],
+            [
+                "text": "人",
+                "answers": ["person","enter","hand","year"],
+                "correctAnswer": "person"
+            ],
+            [
+                "text": "口",
+                "answers": ["くち","め","みみ","あし"],
+                "correctAnswer": "くち"
+            ],
+            [
+                "text": "口",
+                "answers": ["mouth","eye","hand","ear"],
+                "correctAnswer": "mouth"
+            ],
+            [
+                "text": "人口",
+                "answers": ["じんこう","じんせい","ひとり","ひとつ"],
+                "correctAnswer": "じんこう"
+            ],
+            [
+                "text": "人口",
+                "answers": ["population","entrance","human","exit"],
+                "correctAnswer": "population"
+            ],
+            [
+                "text": "目",
+                "answers": ["め","くち","みみ","あし"],
+                "correctAnswer": "め"
+            ],
+            [
+                "text": "目",
+                "answers": ["eye","mouth","hand","ear"],
+                "correctAnswer": "eye"
+            ],
+            [
+                "text": "耳",
+                "answers": ["みみ","め","くち","あし"],
+                "correctAnswer": "みみ"
+            ],
+            [
+                "text": "耳",
+                "answers": ["ear","mouth","hand","eye"],
+                "correctAnswer": "ear"
+            ],
+            [
+                "text": "手",
+                "answers": ["て","め","くち","あし"],
+                "correctAnswer": "て"
+            ],
+            [
+                "text": "手",
+                "answers": ["hand","ear","mouth","foot"],
+                "correctAnswer": "hand"
+            ],
+            [
+                "text": "足",
+                "answers": ["あし","て","め","くち"],
+                "correctAnswer": "あし"
+            ],
+            [
+                "text": "足",
+                "answers": ["foot","hand","head","mouth"],
+                "correctAnswer": "foot"
+            ]
         ]
     ]
 }

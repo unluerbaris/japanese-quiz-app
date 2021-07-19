@@ -15,7 +15,7 @@ class LessonsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  seeds.seedData()
+        //seeds.seedData()
         let scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = #colorLiteral(red: 0.09018556029, green: 0.09020196646, blue: 0.09017995745, alpha: 1)
         view.addSubview(scrollView)
