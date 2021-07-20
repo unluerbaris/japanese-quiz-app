@@ -19,7 +19,7 @@ class Seeds {
     func seedData() {
         let quizFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Quiz")
         let quizDeleteRequest = NSBatchDeleteRequest(fetchRequest: quizFetchRequest)
-
+        
         do {
             try persistentStoreCoordinator.execute(quizDeleteRequest, with: context)
         } catch let error as NSError {
@@ -39,17 +39,18 @@ class Seeds {
             let newQuiz = Quiz(context: context)
             newQuiz.isSuccessful = false
             newQuiz.quizIndex = Int64(index)
+            newQuiz.quizName = "Test Quiz"
             
             for question in quiz {
                 let newQuestion = Question(context: context)
                 newQuestion.text = question["text"] as? String
                 newQuestion.answers = question["answers"] as? [String]
                 newQuestion.correctAnswer = question["correctAnswer"] as? String
+                newQuestion.shouldReview = false
                 
                 newQuiz.addToQuestions(newQuestion)
             }
         }
-        
         saveQuiz()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))

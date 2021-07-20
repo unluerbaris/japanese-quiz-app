@@ -2,7 +2,7 @@
 //  Question+CoreDataProperties.swift
 //  Japanese Flash Cards
 //
-//  Created by Baris Unluer on 2021/07/18.
+//  Created by Baris Unluer on 2021/07/20.
 //
 //
 
@@ -18,6 +18,7 @@ extension Question {
 
     @NSManaged public var answers: [String]?
     @NSManaged public var correctAnswer: String?
+    @NSManaged public var shouldReview: Bool
     @NSManaged public var text: String?
     @NSManaged public var quiz: NSSet?
 

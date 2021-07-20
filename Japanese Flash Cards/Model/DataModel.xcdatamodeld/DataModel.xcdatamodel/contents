@@ -3,16 +3,18 @@
     <entity name="Question" representedClassName=".Question" syncable="YES">
         <attribute name="answers" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName=".[String]"/>
         <attribute name="correctAnswer" optional="YES" attributeType="String"/>
+        <attribute name="shouldReview" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="text" attributeType="String"/>
         <relationship name="quiz" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Quiz" inverseName="questions" inverseEntity="Quiz"/>
     </entity>
     <entity name="Quiz" representedClassName=".Quiz" syncable="YES">
         <attribute name="isSuccessful" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="quizIndex" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="quizName" optional="YES" attributeType="String"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="quiz" inverseEntity="Question"/>
     </entity>
     <elements>
-        <element name="Question" positionX="-63" positionY="0" width="128" height="89"/>
-        <element name="Quiz" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Question" positionX="-63" positionY="0" width="128" height="104"/>
+        <element name="Quiz" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

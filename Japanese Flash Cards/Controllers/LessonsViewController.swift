@@ -43,7 +43,7 @@ class LessonsViewController: UIViewController {
                 
                 scrollView.addSubview(button)
                 button.center.x = view.center.x
-                button.configure(with: TwoLinedButtonViewModel(primaryText: "Quiz \(quiz.quizIndex + 1)", secondaryText: "Start Quiz"))
+                button.configure(with: TwoLinedButtonViewModel(primaryText: "Quiz \(quiz.quizIndex + 1)", secondaryText: quiz.quizName ?? "Go to Quiz"))
                 
                 button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
                 

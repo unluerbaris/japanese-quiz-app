@@ -2,7 +2,7 @@
 //  Quiz+CoreDataClass.swift
 //  Japanese Flash Cards
 //
-//  Created by Baris Unluer on 2021/07/18.
+//  Created by Baris Unluer on 2021/07/20.
 //
 //
 
