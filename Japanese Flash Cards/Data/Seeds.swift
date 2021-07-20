@@ -39,9 +39,11 @@ class Seeds {
             let newQuiz = Quiz(context: context)
             newQuiz.isSuccessful = false
             newQuiz.quizIndex = Int64(index)
-            newQuiz.quizName = "Test Quiz"
+            newQuiz.quizName = quiz["name"] as? String
             
-            for question in quiz {
+            let questions = quiz["questions"] as? [[String: Any]]
+            
+            for question in questions! {
                 let newQuestion = Question(context: context)
                 newQuestion.text = question["text"] as? String
                 newQuestion.answers = question["answers"] as? [String]
