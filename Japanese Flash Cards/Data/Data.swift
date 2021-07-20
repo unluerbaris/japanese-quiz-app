@@ -648,6 +648,192 @@ class Data {
                 "answers": ["foot","hand","head","mouth"],
                 "correctAnswer": "foot"
             ]
+        ],
+        [
+            [
+                "text": "力",
+                "answers": ["ちから","か","りゅう","て"],
+                "correctAnswer": "ちから"
+            ],
+            [
+                "text": "力",
+                "answers": ["power","hand","skill","head"],
+                "correctAnswer": "power"
+            ],
+            [
+                "text": "山",
+                "answers": ["やま","かわ","た","いし"],
+                "correctAnswer": "やま"
+            ],
+            [
+                "text": "山",
+                "answers": ["mountain","river","stone","sky"],
+                "correctAnswer": "mountain"
+            ],
+            [
+                "text": "川",
+                "answers": ["かわ","やま","た","いし"],
+                "correctAnswer": "かわ"
+            ],
+            [
+                "text": "川",
+                "answers": ["river","mountain","stone","sky"],
+                "correctAnswer": "river"
+            ],
+            [
+                "text": "火山",
+                "answers": ["かざん","ひやま","かやま","やまは"],
+                "correctAnswer": "かざん"
+            ],
+            [
+                "text": "火山",
+                "answers": ["volcano","mountain","stone","fireworks"],
+                "correctAnswer": "volcano"
+            ],
+            [
+                "text": "田",
+                "answers": ["た","すいzやま","かわ","いし"],
+                "correctAnswer": "た"
+            ],
+            [
+                "text": "田",
+                "answers": ["rice field","mountain","box","stone"],
+                "correctAnswer": "rice field"
+            ],
+            [
+                "text": "水田",
+                "answers": ["すいでん","すいだ","すいか","すいた"],
+                "correctAnswer": "すいでん"
+            ],
+            [
+                "text": "水田",
+                "answers": ["paddy field","field","watermelon","water tank"],
+                "correctAnswer": "paddy field"
+            ]
+        ],
+        [
+            [
+                "text": "石",
+                "answers": ["いし","やま","かわ","た"],
+                "correctAnswer": "いし"
+            ],
+            [
+                "text": "石",
+                "answers": ["stone","mountain","river","sky"],
+                "correctAnswer": "stone"
+            ],
+            [
+                "text": "花",
+                "answers": ["はな","やま","たけ","あめ"],
+                "correctAnswer": "はな"
+            ],
+            [
+                "text": "花",
+                "answers": ["flower","bamboo","river","rain"],
+                "correctAnswer": "flower"
+            ],
+            [
+                "text": "竹",
+                "answers": ["たけ","はな","やま","あめ"],
+                "correctAnswer": "たけ"
+            ],
+            [
+                "text": "竹",
+                "answers": ["bamboo","flower","river","rain"],
+                "correctAnswer": "bamboo"
+            ],
+            [
+                "text": "花火",
+                "answers": ["はなび","はなみ","はなだ","はなや"],
+                "correctAnswer": "はなび"
+            ],
+            [
+                "text": "花火",
+                "answers": ["fireworks","flower","sakura","rose"],
+                "correctAnswer": "fireworks"
+            ],
+            [
+                "text": "雨",
+                "answers": ["あめ","たけ","はな","やま"],
+                "correctAnswer": "あめ"
+            ],
+            [
+                "text": "雨",
+                "answers": ["rain","flower","river","snow"],
+                "correctAnswer": "rain"
+            ],
+            [
+                "text": "大雨",
+                "answers": ["おおあめ","おおみず","あめ","みず"],
+                "correctAnswer": "おおあめ"
+            ],
+            [
+                "text": "大雨",
+                "answers": ["heavy rain","rain","river","thunder"],
+                "correctAnswer": "heavy rain"
+            ]
+        ],
+        [
+            [
+                "text": "上",
+                "answers": ["うえ","した","みぎ","ひだり"],
+                "correctAnswer": "うえ"
+            ],
+            [
+                "text": "上",
+                "answers": ["above","below","right","left"],
+                "correctAnswer": "above"
+            ],
+            [
+                "text": "下",
+                "answers": ["した","うえ","みぎ","ひだり"],
+                "correctAnswer": "した"
+            ],
+            [
+                "text": "下",
+                "answers": ["below","above","right","left"],
+                "correctAnswer": "below"
+            ],
+            [
+                "text": "上がる",
+                "answers": ["あがる","さがる","うがる","まがる"],
+                "correctAnswer": "あがる"
+            ],
+            [
+                "text": "上がる",
+                "answers": ["to go up","to come down","to jump","turn left"],
+                "correctAnswer": "to go up"
+            ],
+            [
+                "text": "下がる",
+                "answers": ["さがる","あがる","したがる","まがる"],
+                "correctAnswer": "さがる"
+            ],
+            [
+                "text": "下がる",
+                "answers": ["to come down","to go up","to sit down","to jump down"],
+                "correctAnswer": "to come down"
+            ],
+            [
+                "text": "年上",
+                "answers": ["としうえ","としあ","ねんうえ","ねんあ"],
+                "correctAnswer": "としうえ"
+            ],
+            [
+                "text": "年上",
+                "answers": ["older","next year","last year","younger"],
+                "correctAnswer": "older"
+            ],
+            [
+                "text": "上着",
+                "answers": ["うわぎ","したぎ","うえぎ","あぎ"],
+                "correctAnswer": "うわぎ"
+            ],
+            [
+                "text": "上着",
+                "answers": ["coat","older","underwear","hat"],
+                "correctAnswer": "coat"
+            ]
         ]
     ]
 }

@@ -16,13 +16,15 @@ class LessonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //seeds.seedData()
+        quizArray = seeds.getQuizArray()
+        quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
+        
+//        let scrollViewHeight = (quizArray!.count * 100)
         let scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = #colorLiteral(red: 0.09018556029, green: 0.09020196646, blue: 0.09017995745, alpha: 1)
         view.addSubview(scrollView)
-        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 800)
-        
-        quizArray = seeds.getQuizArray()
-        quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
+        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 2000)
+        scrollView.contentInsetAdjustmentBehavior = .always
         
         if let safeQuizArray = quizArray {
             
@@ -38,7 +40,7 @@ class LessonsViewController: UIViewController {
                 
                 scrollView.addSubview(button)
                 button.center.x = view.center.x
-                button.configure(with: TwoLinedButtonViewModel(primaryText: "Quiz \(quiz.quizIndex + 1)", secondaryText: "Start Lesson"))
+                button.configure(with: TwoLinedButtonViewModel(primaryText: "Quiz \(quiz.quizIndex + 1)", secondaryText: "Start Quiz"))
                 
                 button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
                 
