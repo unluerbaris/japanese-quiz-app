@@ -169,7 +169,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" name="Background"/>
                                         <constraints>
                                             <constraint firstItem="vSJ-gT-mi7" firstAttribute="centerX" secondItem="jaU-8r-u7e" secondAttribute="centerX" id="LHW-Mx-OJw"/>
                                             <constraint firstAttribute="trailing" secondItem="vSJ-gT-mi7" secondAttribute="trailing" constant="100" id="WBT-no-WXd"/>
