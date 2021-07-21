@@ -15,7 +15,7 @@ class LessonsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //seeds.seedData()
+       // seeds.seedData()
         
         quizArray = seeds.getQuizArray()
         quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
