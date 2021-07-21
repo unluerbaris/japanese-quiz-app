@@ -16,6 +16,7 @@ class LessonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //seeds.seedData()
+        
         quizArray = seeds.getQuizArray()
         quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
         
@@ -57,6 +58,16 @@ class LessonsViewController: UIViewController {
         } else {
             print("quizArray has nil value!")
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @objc private func action(sender: TwoLinedButton) {
