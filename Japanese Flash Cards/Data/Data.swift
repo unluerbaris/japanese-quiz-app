@@ -515,7 +515,7 @@ class Data {
                 [
                     "text": "お金",
                     "answers": ["money","bank","coin","car"],
-                    "correctAnswer": "tree"
+                    "correctAnswer": "money"
                 ],
                 [
                     "text": "金",

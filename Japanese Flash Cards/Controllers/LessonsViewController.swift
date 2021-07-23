@@ -11,11 +11,16 @@ class LessonsViewController: UIViewController {
         
     var targetButton: TwoLinedButton?
     let seeds = Seeds()
+    let data = Data()
     var quizArray: [Quiz]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // seeds.seedData()
+        
+        if data.n5.count != seeds.getQuizCount() {
+            seeds.seedData()
+            print("new data added")
+        }
         
         quizArray = seeds.getQuizArray()
         quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})

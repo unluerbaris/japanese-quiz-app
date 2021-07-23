@@ -79,4 +79,39 @@ class Seeds {
         loadQuiz()
         return quizArray!
     }
+    
+    func getQuizCount() -> Int {
+        loadQuiz()
+        return quizArray?.count ?? 0
+    }
+    
+//    func checkQuiz(quiz: Quiz, index: Int) {
+//        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+//        request.predicate = NSPredicate(format: "quizIndex == %i", index)
+//
+//        do {
+//            let dbQuiz: Quiz
+//            dbQuiz = try context.fetch(request)[0]
+//            print("DB QNAME == QNAME : \(dbQuiz == quiz)")
+//        } catch {
+//            print("Error fetching data from context \(error)")
+//        }
+//    }
+    
+//    func checkData() {
+//        loadQuiz()
+//
+//        for (index, quiz) in data.n5.enumerated() {
+//
+//            checkQuiz(quiz: quiz["questions"] as! [Any], index: index)
+//
+//            let questions = quiz["questions"] as? [[String: Any]]
+//
+//            for question in questions! {
+//                print("QUESTION TEXT: \(question["text"] ?? "NO NAME")")
+//                print("ANSWERS: \(question["answers"] ?? [])")
+//                print("CORRECT ANSWER: \(question["correctAnswer"] ?? "NO NAME")")
+//            }
+//        }
+//    }
 }
