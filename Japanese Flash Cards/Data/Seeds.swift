@@ -85,33 +85,60 @@ class Seeds {
         return quizArray?.count ?? 0
     }
     
-//    func checkQuiz(quiz: Quiz, index: Int) {
-//        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
-//        request.predicate = NSPredicate(format: "quizIndex == %i", index)
-//
-//        do {
-//            let dbQuiz: Quiz
-//            dbQuiz = try context.fetch(request)[0]
-//            print("DB QNAME == QNAME : \(dbQuiz == quiz)")
-//        } catch {
-//            print("Error fetching data from context \(error)")
-//        }
-//    }
+    func updateData() {
+        loadQuiz()
+        for (index, quiz) in data.n5.enumerated() {
+            checkQuiz(quiz: quiz, index: index)
+        }
+        saveQuiz()
+    }
     
-//    func checkData() {
-//        loadQuiz()
-//
-//        for (index, quiz) in data.n5.enumerated() {
-//
-//            checkQuiz(quiz: quiz["questions"] as! [Any], index: index)
-//
-//            let questions = quiz["questions"] as? [[String: Any]]
-//
-//            for question in questions! {
-//                print("QUESTION TEXT: \(question["text"] ?? "NO NAME")")
-//                print("ANSWERS: \(question["answers"] ?? [])")
-//                print("CORRECT ANSWER: \(question["correctAnswer"] ?? "NO NAME")")
-//            }
-//        }
-//    }
+    func checkQuiz(quiz: [String : Any], index: Int) {
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        request.predicate = NSPredicate(format: "quizIndex == %i", index)
+
+        do {
+            let dbQuiz: Quiz
+            dbQuiz = try context.fetch(request)[0]
+            if dbQuiz.quizName != quiz["name"] as? String {
+                dbQuiz.quizName = quiz["name"] as? String
+                print("Updated quiz name from \(String(describing: dbQuiz.quizName)) to \(String(describing: quiz["name"]))")
+            }
+            
+            let questions = quiz["questions"] as? [[String: Any]]
+            for question in questions! {
+                let dbQuestion = getDBQuestion(text: question["text"] as! String, correctAnswer: question["correctAnswer"] as! String)
+                // TODO: get dbquestion even question text and answer is different
+                if dbQuestion?.text != question["text"] as? String {
+                    dbQuestion?.text = question["text"] as? String
+                    print("Updated question text from \(String(describing: dbQuestion?.text)) to \(String(describing: question["text"]))")
+                }
+                if dbQuestion?.answers != question["answers"] as? [String] {
+                    dbQuestion?.answers = question["answers"] as? [String]
+                    print("Updated question answers from \(String(describing: dbQuestion?.answers)) to \(String(describing: question["answers"] as? [String]))")
+                }
+                if dbQuestion?.correctAnswer != question["correctAnswer"] as? String {
+                    dbQuestion?.correctAnswer = question["correctAnswer"] as? String
+                    print("Updated correct answer from \(String(describing: dbQuestion?.correctAnswer)) to \(String(describing: question["correctAnswer"]))")
+                }
+            }
+            
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+    }
+
+    
+    func getDBQuestion(text: String, correctAnswer: String) -> Question? {
+        let request: NSFetchRequest<Question> = Question.fetchRequest()
+        request.predicate = NSPredicate(format: "text == %@ AND correctAnswer == %@", text, correctAnswer)
+        
+        do {
+            let question = try context.fetch(request)[0]
+            return question
+        } catch  {
+            print("Error fetching data from context \(error)")
+        }
+        return nil
+    }
 }
