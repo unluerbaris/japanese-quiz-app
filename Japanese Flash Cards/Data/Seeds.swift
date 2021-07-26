@@ -35,22 +35,26 @@ class Seeds {
             print("Data removing error \(error)")
         }
         
-        for (index, quiz) in data.n5.enumerated() {
+        var questionIndex = 0
+        
+        for (quizIndex, quiz) in data.n5.enumerated() {
             let newQuiz = Quiz(context: context)
             newQuiz.isSuccessful = false
-            newQuiz.quizIndex = Int64(index)
+            newQuiz.quizIndex = Int64(quizIndex)
             newQuiz.quizName = quiz["name"] as? String
             
             let questions = quiz["questions"] as? [[String: Any]]
             
             for question in questions! {
                 let newQuestion = Question(context: context)
+                newQuestion.questionIndex = Int64(questionIndex)
                 newQuestion.text = question["text"] as? String
                 newQuestion.answers = question["answers"] as? [String]
                 newQuestion.correctAnswer = question["correctAnswer"] as? String
                 newQuestion.shouldReview = false
                 
                 newQuiz.addToQuestions(newQuestion)
+                questionIndex += 1
             }
         }
         saveQuiz()
@@ -106,9 +110,9 @@ class Seeds {
             }
             
             let questions = quiz["questions"] as? [[String: Any]]
-            for question in questions! {
-                let dbQuestion = getDBQuestion(text: question["text"] as! String, correctAnswer: question["correctAnswer"] as! String)
-                // TODO: get dbquestion even question text and answer is different
+            for (questionIndex, question) in questions!.enumerated() {
+                let dbQuestion = getDBQuestion(index: (Int(dbQuiz.quizIndex) * questions!.count) + questionIndex)
+                
                 if dbQuestion?.text != question["text"] as? String {
                     dbQuestion?.text = question["text"] as? String
                     print("Updated question text from \(String(describing: dbQuestion?.text)) to \(String(describing: question["text"]))")
@@ -129,9 +133,9 @@ class Seeds {
     }
 
     
-    func getDBQuestion(text: String, correctAnswer: String) -> Question? {
+    func getDBQuestion(index: Int) -> Question? {
         let request: NSFetchRequest<Question> = Question.fetchRequest()
-        request.predicate = NSPredicate(format: "text == %@ AND correctAnswer == %@", text, correctAnswer)
+        request.predicate = NSPredicate(format: "questionIndex == %i", index)
         
         do {
             let question = try context.fetch(request)[0]

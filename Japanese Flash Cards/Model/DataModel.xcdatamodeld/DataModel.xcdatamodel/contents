@@ -3,6 +3,7 @@
     <entity name="Question" representedClassName=".Question" syncable="YES">
         <attribute name="answers" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName=".[String]"/>
         <attribute name="correctAnswer" optional="YES" attributeType="String"/>
+        <attribute name="questionIndex" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="shouldReview" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="text" attributeType="String"/>
         <relationship name="quiz" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Quiz" inverseName="questions" inverseEntity="Quiz"/>
@@ -14,7 +15,7 @@
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="quiz" inverseEntity="Question"/>
     </entity>
     <elements>
-        <element name="Question" positionX="-63" positionY="0" width="128" height="104"/>
+        <element name="Question" positionX="-63" positionY="0" width="128" height="119"/>
         <element name="Quiz" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>
