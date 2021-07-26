@@ -29,8 +29,8 @@ class Data {
                 ],
                 [
                     "text": "一つ",
-                    "answers": ["one thing","two things","two people","one person"],
-                    "correctAnswer": "one thing"
+                    "answers": ["one (counter)","two (counter)","two people","one person"],
+                    "correctAnswer": "one (counter)"
                 ],
                 [
                     "text": "一人",
@@ -39,7 +39,7 @@ class Data {
                 ],
                 [
                     "text": "一人",
-                    "answers": ["one person","two people","one thing","two things"],
+                    "answers": ["one person","two people","one (counter)","two (counter)"],
                     "correctAnswer": "one person"
                 ],
                 [
@@ -59,8 +59,8 @@ class Data {
                 ],
                 [
                     "text": "二つ",
-                    "answers": ["two things","one thing","two people","one person"],
-                    "correctAnswer": "two things"
+                    "answers": ["two (counter)","one (counter)","two people","one person"],
+                    "correctAnswer": "two (counter)"
                 ],
                 [
                     "text": "二人",
@@ -69,7 +69,7 @@ class Data {
                 ],
                 [
                     "text": "二人",
-                    "answers": ["two people","one person","one thing","two things"],
+                    "answers": ["two people","one person","one (counter)","two (counter)"],
                     "correctAnswer": "two people"
                 ]
             ]
@@ -94,8 +94,8 @@ class Data {
                 ],
                 [
                     "text": "三つ",
-                    "answers": ["three things","four things","five things","six things"],
-                    "correctAnswer": "three things"
+                    "answers": ["three (counter)","four (counter)","five (counter)","six (counter)"],
+                    "correctAnswer": "three (counter)"
                 ],
                 [
                     "text": "三人",
@@ -124,8 +124,8 @@ class Data {
                 ],
                 [
                     "text": "四つ",
-                    "answers": ["four things","three things","three people","four people"],
-                    "correctAnswer": "four things"
+                    "answers": ["four (counter)","three (counter)","three people","four people"],
+                    "correctAnswer": "four (counter)"
                 ],
                 [
                     "text": "四人",
@@ -134,7 +134,7 @@ class Data {
                 ],
                 [
                     "text": "四人",
-                    "answers": ["four people","three people","three things","four things"],
+                    "answers": ["four people","three people","three (counter)","four (counter)"],
                     "correctAnswer": "four people"
                 ]
             ]
@@ -159,8 +159,8 @@ class Data {
                 ],
                 [
                     "text": "五つ",
-                    "answers": ["five things","three things","six things","seven things"],
-                    "correctAnswer": "five things"
+                    "answers": ["five (counter)","three (counter)","six (counter)","seven (counter)"],
+                    "correctAnswer": "five (counter)"
                 ],
                 [
                     "text": "五人",
@@ -189,8 +189,8 @@ class Data {
                 ],
                 [
                     "text": "六つ",
-                    "answers": ["six things","five things","three things","seven things"],
-                    "correctAnswer": "six things"
+                    "answers": ["six (counter)","five (counter)","three (counter)","seven (counter)"],
+                    "correctAnswer": "six (counter)"
                 ],
                 [
                     "text": "六人",
@@ -224,8 +224,8 @@ class Data {
                 ],
                 [
                     "text": "七つ",
-                    "answers": ["seven things","six things","five things","eight things"],
-                    "correctAnswer": "seven things"
+                    "answers": ["seven (counter)","six (counter)","five (counter)","eight (counter)"],
+                    "correctAnswer": "seven (counter)"
                 ],
                 [
                     "text": "七人",
@@ -254,8 +254,8 @@ class Data {
                 ],
                 [
                     "text": "八つ",
-                    "answers": ["eight things","seven things","six things","five things"],
-                    "correctAnswer": "eight things"
+                    "answers": ["eight (counter)","seven (counter)","six (counter)","five (counter)"],
+                    "correctAnswer": "eight (counter)"
                 ],
                 [
                     "text": "八人",
@@ -289,8 +289,8 @@ class Data {
                 ],
                 [
                     "text": "九つ",
-                    "answers": ["nine things","seven things","six things","eight things"],
-                    "correctAnswer": "nine things"
+                    "answers": ["nine (counter)","seven (counter)","six (counter)","eight (counter)"],
+                    "correctAnswer": "nine (counter)"
                 ],
                 [
                     "text": "九人",
@@ -319,8 +319,8 @@ class Data {
                 ],
                 [
                     "text": "十 (counter)",
-                    "answers": ["ten things","eight things","seven things","six things"],
-                    "correctAnswer": "ten things"
+                    "answers": ["ten (counter)","eight (counter)","seven (counter)","six (counter)"],
+                    "correctAnswer": "ten (counter)"
                 ],
                 [
                     "text": "十人",

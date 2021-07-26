@@ -17,7 +17,6 @@ class LessonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        seeds.seedData()
         seeds.updateData()
         if data.n5.count != seeds.getQuizCount() {
             seeds.seedData()

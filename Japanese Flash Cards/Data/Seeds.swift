@@ -15,6 +15,7 @@ class Seeds {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let persistentStoreCoordinator = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.persistentStoreCoordinator
+    var questionCounter = 0
     
     func seedData() {
         let quizFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Quiz")
@@ -105,25 +106,27 @@ class Seeds {
             let dbQuiz: Quiz
             dbQuiz = try context.fetch(request)[0]
             if dbQuiz.quizName != quiz["name"] as? String {
-                dbQuiz.quizName = quiz["name"] as? String
                 print("Updated quiz name from \(String(describing: dbQuiz.quizName)) to \(String(describing: quiz["name"]))")
+                dbQuiz.quizName = quiz["name"] as? String
             }
             
             let questions = quiz["questions"] as? [[String: Any]]
-            for (questionIndex, question) in questions!.enumerated() {
-                let dbQuestion = getDBQuestion(index: (Int(dbQuiz.quizIndex) * questions!.count) + questionIndex)
+            for question in questions! {
+                
+                let dbQuestion = getDBQuestion(index: questionCounter)
+                questionCounter += 1
                 
                 if dbQuestion?.text != question["text"] as? String {
-                    dbQuestion?.text = question["text"] as? String
                     print("Updated question text from \(String(describing: dbQuestion?.text)) to \(String(describing: question["text"]))")
+                    dbQuestion?.text = question["text"] as? String
                 }
                 if dbQuestion?.answers != question["answers"] as? [String] {
-                    dbQuestion?.answers = question["answers"] as? [String]
                     print("Updated question answers from \(String(describing: dbQuestion?.answers)) to \(String(describing: question["answers"] as? [String]))")
+                    dbQuestion?.answers = question["answers"] as? [String]
                 }
                 if dbQuestion?.correctAnswer != question["correctAnswer"] as? String {
-                    dbQuestion?.correctAnswer = question["correctAnswer"] as? String
                     print("Updated correct answer from \(String(describing: dbQuestion?.correctAnswer)) to \(String(describing: question["correctAnswer"]))")
+                    dbQuestion?.correctAnswer = question["correctAnswer"] as? String
                 }
             }
             
