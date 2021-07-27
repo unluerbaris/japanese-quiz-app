@@ -148,4 +148,19 @@ class Seeds {
         }
         return nil
     }
+    
+    func isDatabaseEmpty() -> Bool {
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        do {
+            var quizData: [Quiz]?
+            quizData = try context.fetch(request)
+            if quizData!.count <= 0 {
+                return true
+            }
+            return false
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        return false
+    }
 }
