@@ -18,23 +18,7 @@ class Seeds {
     var questionCounter = 0
     
     func seedData() {
-        let quizFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Quiz")
-        let quizDeleteRequest = NSBatchDeleteRequest(fetchRequest: quizFetchRequest)
-        
-        do {
-            try persistentStoreCoordinator.execute(quizDeleteRequest, with: context)
-        } catch let error as NSError {
-            print("Data removing error \(error)")
-        }
-
-        let questionFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Question")
-        let questionDeleteRequest = NSBatchDeleteRequest(fetchRequest: questionFetchRequest)
-
-        do {
-            try persistentStoreCoordinator.execute(questionDeleteRequest, with: context)
-        } catch let error as NSError {
-            print("Data removing error \(error)")
-        }
+        clearDatabase()
         
         var questionIndex = 0
         
@@ -162,5 +146,27 @@ class Seeds {
             print("Error fetching data from context \(error)")
         }
         return false
+    }
+    
+    func clearDatabase() {
+        let questionFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Question")
+        let questionDeleteRequest = NSBatchDeleteRequest(fetchRequest: questionFetchRequest)
+
+        do {
+            try persistentStoreCoordinator.execute(questionDeleteRequest, with: context)
+            print("Questions are removed!")
+        } catch let error as NSError {
+            print("Data removing error \(error)")
+        }
+        
+        let quizFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Quiz")
+        let quizDeleteRequest = NSBatchDeleteRequest(fetchRequest: quizFetchRequest)
+        
+        do {
+            try persistentStoreCoordinator.execute(quizDeleteRequest, with: context)
+            print("Quizzes are removed!")
+        } catch let error as NSError {
+            print("Data removing error \(error)")
+        }
     }
 }

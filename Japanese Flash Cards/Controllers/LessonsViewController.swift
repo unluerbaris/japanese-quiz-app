@@ -21,7 +21,7 @@ class LessonsViewController: UIViewController {
             seeds.seedData()
         }
         
-        seeds.updateData()
+//        seeds.updateData()
 //        if data.n5.count != seeds.getQuizCount() {
 //            seeds.seedData()
 //            print("new data added")
