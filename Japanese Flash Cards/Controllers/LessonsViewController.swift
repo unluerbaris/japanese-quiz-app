@@ -19,8 +19,6 @@ class LessonsViewController: UIViewController {
         
         if seeds.isDatabaseEmpty() {
             seeds.seedData()
-        } else if data.n5.count != seeds.getQuizCount() {
-            // update
         }
         
         seeds.updateData()

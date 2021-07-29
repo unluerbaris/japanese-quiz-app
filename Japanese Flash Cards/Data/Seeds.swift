@@ -103,10 +103,24 @@ class Seeds {
         return false
     }
     
+    func getQuestionCount() -> Int {
+        let request: NSFetchRequest<Question> = Question.fetchRequest()
+        do {
+            var questionData: [Question]?
+            questionData = try context.fetch(request)
+            return questionData?.count ?? 0
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        return 0
+    }
+    
     //MARK: - Update Data
     
     func updateData() {
         loadData()
+        addNewQuizData()
+        
         for (index, quiz) in data.n5.enumerated() {
             updateQuiz(quiz: quiz, index: index)
         }
@@ -118,6 +132,31 @@ class Seeds {
             try context.save()
         } catch {
             print("Error saving context \(error)")
+        }
+    }
+    
+    func addNewQuizData() {
+        if data.n5.count != quizArray?.count {
+            var questionIndex = getQuestionCount()
+            
+            for quizIndex in (quizArray!.count)...(data.n5.count - 1) {
+                let newQuiz = createQuiz(index: Int64(quizIndex), quizName: data.n5[quizIndex]["name"] as? String)
+                let questions = data.n5[quizIndex]["questions"] as? [[String: Any]]
+                print("Index \(quizIndex) Quiz Created")
+                
+                for question in questions! {
+                    createQuestion(
+                        index: Int64(questionIndex),
+                        text: question["text"] as? String,
+                        answers: question["answers"] as? [String],
+                        correctAnswer: question["correctAnswer"] as? String,
+                        quiz: newQuiz
+                    )
+                    print("Index \(questionIndex) Question Created")
+                    questionIndex += 1
+                }
+            }
+            saveData()
         }
     }
     
@@ -187,10 +226,5 @@ class Seeds {
     func getQuizArray() -> [Quiz] {
         loadData()
         return quizArray!
-    }
-    
-    func getQuizCount() -> Int {
-        loadData()
-        return quizArray?.count ?? 0
     }
 }
