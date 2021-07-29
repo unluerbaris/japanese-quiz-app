@@ -14,6 +14,8 @@ class LessonsViewController: UIViewController {
     let data = Data()
     var quizArray: [Quiz]?
     
+    //MARK: - View Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +28,44 @@ class LessonsViewController: UIViewController {
         quizArray = seeds.getQuizArray()
         quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
         
+        let scrollView = createScrollView()
+        generateButtons(
+            buttonSpacing: 20,
+            buttonHeight: 80,
+            buttonsTopMargin: 0, // TODO: create margin variable and use it in scrollview size calculation too
+            quizArray: quizArray,
+            scrollView: scrollView
+        )
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    //MARK: - Segue Functions
+    
+    @objc private func action(sender: TwoLinedButton) {
+        targetButton = sender
+        self.performSegue(withIdentifier: "goToLesson", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToLesson" {
+            let destinationVC = segue.destination as! QuizViewController
+            let buttonTextArray = targetButton?.getPrimaryText().split(separator: " ")
+            destinationVC.quizIndex = Int64(buttonTextArray![1])! - Int64(1)
+        }
+    }
+    
+    //MARK: - Generate UI
+    
+    func createScrollView() -> UIScrollView {
         var scrollViewHeight: Float {
             return Float(quizArray!.count * 100)
         }
@@ -36,16 +76,18 @@ class LessonsViewController: UIViewController {
         scrollView.contentSize = CGSize(width: view.frame.size.width, height: CGFloat(scrollViewHeight))
         scrollView.contentInsetAdjustmentBehavior = .always
         
+        return scrollView
+    }
+    
+    func generateButtons(buttonSpacing: Int, buttonHeight: Int, buttonsTopMargin: Int, quizArray: [Quiz]?, scrollView: UIScrollView) {
         if let safeQuizArray = quizArray {
             
             var buttonYPos = 0
             var buttonCounter = 0
-            let buttonSpacing = 20
-            let buttonHeight = 80
             
             for quiz in safeQuizArray {
                 
-                buttonYPos = (buttonHeight + buttonSpacing) * buttonCounter
+                buttonYPos = ((buttonHeight + buttonSpacing) * buttonCounter) + buttonsTopMargin
                 let button = TwoLinedButton(frame: CGRect(x: 0, y: buttonYPos, width: 200, height: buttonHeight))
                 
                 scrollView.addSubview(button)
@@ -63,29 +105,6 @@ class LessonsViewController: UIViewController {
             }
         } else {
             print("quizArray has nil value!")
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
-    @objc private func action(sender: TwoLinedButton) {
-        targetButton = sender
-        self.performSegue(withIdentifier: "goToLesson", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToLesson" {
-            let destinationVC = segue.destination as! QuizViewController
-            let buttonTextArray = targetButton?.getPrimaryText().split(separator: " ")
-            destinationVC.quizIndex = Int64(buttonTextArray![1])! - Int64(1)
         }
     }
 }
