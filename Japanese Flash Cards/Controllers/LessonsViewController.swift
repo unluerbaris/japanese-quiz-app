@@ -16,7 +16,7 @@ class LessonsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if seeds.isDatabaseEmpty() {
             seeds.seedData()
         }

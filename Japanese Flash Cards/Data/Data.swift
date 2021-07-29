@@ -873,6 +873,71 @@ class Data {
                     "correctAnswer": "coat"
                 ]
             ]
+        ],
+        [
+            "name": "Location - 2",
+            "questions": [
+                [
+                    "text": "左",
+                    "answers": ["ひだり","うえ","した","みぎ"],
+                    "correctAnswer": "ひだり"
+                ],
+                [
+                    "text": "左",
+                    "answers": ["left","above","below","right"],
+                    "correctAnswer": "left"
+                ],
+                [
+                    "text": "右",
+                    "answers": ["みぎ","した","うえ","ひだり"],
+                    "correctAnswer": "みぎ"
+                ],
+                [
+                    "text": "右",
+                    "answers": ["right","below","above","left"],
+                    "correctAnswer": "right"
+                ],
+                [
+                    "text": "左右",
+                    "answers": ["さゆう","みぎひだり","ゆうさ","ひだりみぎ"],
+                    "correctAnswer": "さゆう"
+                ],
+                [
+                    "text": "左右",
+                    "answers": ["left and right","up and down","front and back","to turn around"],
+                    "correctAnswer": "left and right"
+                ],
+                [
+                    "text": "外",
+                    "answers": ["そと","うち","なか","うえ"],
+                    "correctAnswer": "そと"
+                ],
+                [
+                    "text": "外",
+                    "answers": ["outside","inside","middle, center","above"],
+                    "correctAnswer": "outside"
+                ],
+                [
+                    "text": "内",
+                    "answers": ["うち","そと","なか","うえ"],
+                    "correctAnswer": "うち"
+                ],
+                [
+                    "text": "内",
+                    "answers": ["inside","outside","middle, center","above"],
+                    "correctAnswer": "inside"
+                ],
+                [
+                    "text": "中",
+                    "answers": ["なか","うち","そと","うえ"],
+                    "correctAnswer": "なか"
+                ],
+                [
+                    "text": "中",
+                    "answers": ["middle, center","below","outside","above"],
+                    "correctAnswer": "middle, center"
+                ]
+            ]
         ]
     ]
 }

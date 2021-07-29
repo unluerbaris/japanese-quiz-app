@@ -40,6 +40,7 @@ class Seeds {
             }
         }
         saveData()
+        print("Seeded data")
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
