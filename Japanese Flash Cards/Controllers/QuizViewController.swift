@@ -20,12 +20,14 @@ class QuizViewController: UIViewController {
     var quizIndex: Int64?
     var questionNumber = 0
     var correctScore = 0 // refresh this value at the end of the quiz
-    var wrongCount = 0 // refresh this value for next question
+    var wrongCount = 0 // refresh this value for the next question
     var quiz: Quiz?
     var questions: [Question]?
     var answers: [String]?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    //MARK: - View Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +36,7 @@ class QuizViewController: UIViewController {
         updateUI()
     }
     
-    func loadQuiz() {
-        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
-        request.predicate = NSPredicate(format: "quizIndex == %i", quizIndex!)
-        
-        do {
-            quiz = try context.fetch(request)[0]
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
-    }
+    //MARK: - Button Actions
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         if sender.currentTitle! == questions![questionNumber].correctAnswer {
@@ -68,6 +61,35 @@ class QuizViewController: UIViewController {
         }
     }
     
+    //MARK: - Segue Functions
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.resultValue = String(getResult())
+            destinationVC.quiz = quiz
+        }
+    }
+    
+    func goToResultPage() {
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    //MARK: - Read Data
+    
+    func loadQuiz() {
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        request.predicate = NSPredicate(format: "quizIndex == %i", quizIndex!)
+        
+        do {
+            quiz = try context.fetch(request)[0]
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+    }
+    
+    //MARK: - Quiz Logic
+    
     @objc func goToNextQuestion() {
         wrongCount = 0
         if questionNumber >= questions!.count - 1 {
@@ -87,14 +109,6 @@ class QuizViewController: UIViewController {
         return false
     }
     
-    func goToResultPage() {
-        self.performSegue(withIdentifier: "goToResult", sender: self)
-    }
-    
-    func shuffleAnswers() {
-        answers!.shuffle()
-    }
-    
     func getProgress() -> Float {
         return Float(questionNumber) / Float((questions!.count))
     }
@@ -102,6 +116,12 @@ class QuizViewController: UIViewController {
     func getResult() -> Int {
         return Int((Float(correctScore) / Float((questions!.count))) * 100)
     }
+    
+    func shuffleAnswers() {
+        answers!.shuffle()
+    }
+    
+    //MARK: - Generate UI
     
     func updateUI() {
         // Reset button styling
@@ -123,13 +143,5 @@ class QuizViewController: UIViewController {
         
         // Progress Bar
         progressBar.progress = getProgress()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToResult" {
-            let destinationVC = segue.destination as! ResultViewController
-            destinationVC.resultValue = String(getResult())
-            destinationVC.quiz = quiz
-        }
     }
 }
