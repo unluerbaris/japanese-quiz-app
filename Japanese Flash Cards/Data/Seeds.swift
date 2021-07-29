@@ -17,45 +17,56 @@ class Seeds {
     let persistentStoreCoordinator = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.persistentStoreCoordinator
     var questionCounter = 0
     
+    //MARK: - Create Data
+
     func seedData() {
         clearDatabase()
         
         var questionIndex = 0
         
         for (quizIndex, quiz) in data.n5.enumerated() {
-            let newQuiz = Quiz(context: context)
-            newQuiz.isSuccessful = false
-            newQuiz.quizIndex = Int64(quizIndex)
-            newQuiz.quizName = quiz["name"] as? String
-            
+            let newQuiz = createQuiz(index: Int64(quizIndex), quizName: quiz["name"] as? String)
             let questions = quiz["questions"] as? [[String: Any]]
             
             for question in questions! {
-                let newQuestion = Question(context: context)
-                newQuestion.questionIndex = Int64(questionIndex)
-                newQuestion.text = question["text"] as? String
-                newQuestion.answers = question["answers"] as? [String]
-                newQuestion.correctAnswer = question["correctAnswer"] as? String
-                newQuestion.shouldReview = false
-                
-                newQuiz.addToQuestions(newQuestion)
+                createQuestion(
+                    index: Int64(questionIndex),
+                    text: question["text"] as? String,
+                    answers: question["answers"] as? [String],
+                    correctAnswer: question["correctAnswer"] as? String,
+                    quiz: newQuiz
+                )
                 questionIndex += 1
             }
         }
-        saveQuiz()
+        saveData()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
-    func saveQuiz() {
-        do {
-            try context.save()
-        } catch {
-            print("Error saving context \(error)")
-        }
+    func createQuiz(index: Int64, quizName: String?) -> Quiz {
+        let newQuiz = Quiz(context: context)
+        newQuiz.isSuccessful = false
+        newQuiz.quizIndex = index
+        newQuiz.quizName = quizName
+        
+        return newQuiz
     }
     
-    func loadQuiz() {
+    func createQuestion(index: Int64, text: String?, answers: [String]?, correctAnswer: String?, quiz: Quiz) {
+        let newQuestion = Question(context: context)
+        newQuestion.questionIndex = index
+        newQuestion.text = text
+        newQuestion.answers = answers
+        newQuestion.correctAnswer = correctAnswer
+        newQuestion.shouldReview = false
+        
+        quiz.addToQuestions(newQuestion)
+    }
+    
+    //MARK: - Read Data
+    
+    func loadData() {
         let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
         do {
             quizArray = try context.fetch(request)
@@ -64,63 +75,7 @@ class Seeds {
         }
     }
     
-    func getQuizArray() -> [Quiz] {
-        loadQuiz()
-        return quizArray!
-    }
-    
-    func getQuizCount() -> Int {
-        loadQuiz()
-        return quizArray?.count ?? 0
-    }
-    
-    func updateData() {
-        loadQuiz()
-        for (index, quiz) in data.n5.enumerated() {
-            checkQuiz(quiz: quiz, index: index)
-        }
-        saveQuiz()
-    }
-    
-    func checkQuiz(quiz: [String : Any], index: Int) {
-        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
-        request.predicate = NSPredicate(format: "quizIndex == %i", index)
-
-        do {
-            let dbQuiz: Quiz
-            dbQuiz = try context.fetch(request)[0]
-            if dbQuiz.quizName != quiz["name"] as? String {
-                print("Updated quiz name from \(String(describing: dbQuiz.quizName)) to \(String(describing: quiz["name"]))")
-                dbQuiz.quizName = quiz["name"] as? String
-            }
-            
-            let questions = quiz["questions"] as? [[String: Any]]
-            for question in questions! {
-                
-                let dbQuestion = getDBQuestion(index: questionCounter)
-                questionCounter += 1
-                
-                if dbQuestion?.text != question["text"] as? String {
-                    print("Updated question text from \(String(describing: dbQuestion?.text)) to \(String(describing: question["text"]))")
-                    dbQuestion?.text = question["text"] as? String
-                }
-                if dbQuestion?.answers != question["answers"] as? [String] {
-                    print("Updated question answers from \(String(describing: dbQuestion?.answers)) to \(String(describing: question["answers"] as? [String]))")
-                    dbQuestion?.answers = question["answers"] as? [String]
-                }
-                if dbQuestion?.correctAnswer != question["correctAnswer"] as? String {
-                    print("Updated correct answer from \(String(describing: dbQuestion?.correctAnswer)) to \(String(describing: question["correctAnswer"]))")
-                    dbQuestion?.correctAnswer = question["correctAnswer"] as? String
-                }
-            }
-            
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
-    }
-
-    
-    func getDBQuestion(index: Int) -> Question? {
+    func getQuestionFromDatabase(index: Int) -> Question? {
         let request: NSFetchRequest<Question> = Question.fetchRequest()
         request.predicate = NSPredicate(format: "questionIndex == %i", index)
         
@@ -148,6 +103,63 @@ class Seeds {
         return false
     }
     
+    //MARK: - Update Data
+    
+    func updateData() {
+        loadData()
+        for (index, quiz) in data.n5.enumerated() {
+            updateQuiz(quiz: quiz, index: index)
+        }
+        saveData()
+    }
+    
+    func saveData() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+    }
+    
+    func updateQuiz(quiz: [String : Any], index: Int) {
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        request.predicate = NSPredicate(format: "quizIndex == %i", index)
+
+        do {
+            let dbQuiz: Quiz
+            dbQuiz = try context.fetch(request)[0]
+            if dbQuiz.quizName != quiz["name"] as? String {
+                print("Updated quiz name from \(String(describing: dbQuiz.quizName)) to \(String(describing: quiz["name"]))")
+                dbQuiz.quizName = quiz["name"] as? String
+            }
+            
+            let questions = quiz["questions"] as? [[String: Any]]
+            for question in questions! {
+                
+                let dbQuestion = getQuestionFromDatabase(index: questionCounter)
+                questionCounter += 1
+                
+                if dbQuestion?.text != question["text"] as? String {
+                    print("Updated question text from \(String(describing: dbQuestion?.text)) to \(String(describing: question["text"]))")
+                    dbQuestion?.text = question["text"] as? String
+                }
+                if dbQuestion?.answers != question["answers"] as? [String] {
+                    print("Updated question answers from \(String(describing: dbQuestion?.answers)) to \(String(describing: question["answers"] as? [String]))")
+                    dbQuestion?.answers = question["answers"] as? [String]
+                }
+                if dbQuestion?.correctAnswer != question["correctAnswer"] as? String {
+                    print("Updated correct answer from \(String(describing: dbQuestion?.correctAnswer)) to \(String(describing: question["correctAnswer"]))")
+                    dbQuestion?.correctAnswer = question["correctAnswer"] as? String
+                }
+            }
+            
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+    }
+    
+    //MARK: - Destroy Data
+    
     func clearDatabase() {
         let questionFetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Question")
         let questionDeleteRequest = NSBatchDeleteRequest(fetchRequest: questionFetchRequest)
@@ -168,5 +180,17 @@ class Seeds {
         } catch let error as NSError {
             print("Data removing error \(error)")
         }
+    }
+    
+    //MARK: - Getter Functions
+    
+    func getQuizArray() -> [Quiz] {
+        loadData()
+        return quizArray!
+    }
+    
+    func getQuizCount() -> Int {
+        loadData()
+        return quizArray?.count ?? 0
     }
 }

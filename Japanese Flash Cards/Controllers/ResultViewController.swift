@@ -22,10 +22,10 @@ class ResultViewController: UIViewController {
         
         if Int(resultValue ?? "0")! >= 70 {
             quiz?.isSuccessful = true
-            seeds.saveQuiz()
+            seeds.saveData()
         } else {
             quiz?.isSuccessful = false
-            seeds.saveQuiz() // this line might be deleted in the future
+            seeds.saveData()
         }
     }
     

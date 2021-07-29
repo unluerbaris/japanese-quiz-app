@@ -19,13 +19,11 @@ class LessonsViewController: UIViewController {
         
         if seeds.isDatabaseEmpty() {
             seeds.seedData()
+        } else if data.n5.count != seeds.getQuizCount() {
+            // update
         }
         
-//        seeds.updateData()
-//        if data.n5.count != seeds.getQuizCount() {
-//            seeds.seedData()
-//            print("new data added")
-//        }
+        seeds.updateData()
         
         quizArray = seeds.getQuizArray()
         quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
