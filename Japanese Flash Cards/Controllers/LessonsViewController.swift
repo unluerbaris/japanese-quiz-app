@@ -71,7 +71,7 @@ class LessonsViewController: UIViewController {
         }
         
         let scrollView = UIScrollView(frame: view.bounds)
-        scrollView.backgroundColor = #colorLiteral(red: 0.09018556029, green: 0.09020196646, blue: 0.09017995745, alpha: 1)
+        scrollView.backgroundColor = #colorLiteral(red: 0.2166324556, green: 0.3115530908, blue: 0.4252717495, alpha: 1)
         view.addSubview(scrollView)
         scrollView.contentSize = CGSize(width: view.frame.size.width, height: CGFloat(scrollViewHeight))
         scrollView.contentInsetAdjustmentBehavior = .always
@@ -97,8 +97,8 @@ class LessonsViewController: UIViewController {
                 button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
                 
                 if quiz.isSuccessful {
-                    button.layer.borderColor = #colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1)
-                    button.setTitleColor(#colorLiteral(red: 0.2099479735, green: 0.4098468721, blue: 0.3193167746, alpha: 1), for: .normal)
+                    button.layer.borderColor = #colorLiteral(red: 0.2509302795, green: 0.7568549514, blue: 0.78648597, alpha: 1)
+                    button.setTitleColor(#colorLiteral(red: 0.2509302795, green: 0.7568549514, blue: 0.78648597, alpha: 1), for: .normal)
                 }
                 
                 buttonCounter += 1

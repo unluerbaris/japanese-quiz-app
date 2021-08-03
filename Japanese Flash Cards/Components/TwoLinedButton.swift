@@ -17,7 +17,7 @@ final class TwoLinedButton: UIButton {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .center
-        label.textColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.9591724277, green: 0.9593099952, blue: 0.9591423869, alpha: 1)
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
     }()
@@ -26,7 +26,7 @@ final class TwoLinedButton: UIButton {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .center
-        label.textColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.9591724277, green: 0.9593099952, blue: 0.9591423869, alpha: 1)
         label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
@@ -37,10 +37,10 @@ final class TwoLinedButton: UIButton {
         addSubview(secondaryLabel)
         clipsToBounds = true
         layer.cornerRadius = 20.0
-        layer.borderWidth = 1.0
+        layer.borderWidth = 2.0
         alpha = 1.0
-        layer.borderColor = #colorLiteral(red: 0.9230592251, green: 0.8625263572, blue: 0.7306218743, alpha: 1)
-        backgroundColor = #colorLiteral(red: 0.09018556029, green: 0.09020196646, blue: 0.09017995745, alpha: 1)
+        layer.borderColor = #colorLiteral(red: 0.7608113613, green: 0.768344147, blue: 0.768344147, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.1896352348, green: 0.2746583889, blue: 0.3858157962, alpha: 1)
     }
     
     required init?(coder: NSCoder) {
