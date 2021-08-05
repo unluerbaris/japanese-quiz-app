@@ -22,10 +22,10 @@ class WhiteBorderButton: UIButton {
         
         isEnabled = true
         alpha = 1.0
-        backgroundColor = #colorLiteral(red: 0.1896352348, green: 0.2746583889, blue: 0.3858157962, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.2134302557, green: 0.1230667606, blue: 0.2268092632, alpha: 1)
         layer.cornerRadius = 20.0
-        layer.borderWidth = 1.0
-        layer.borderColor = #colorLiteral(red: 0.7608113613, green: 0.768344147, blue: 0.768344147, alpha: 1)
-        tintColor = #colorLiteral(red: 0.9591724277, green: 0.9593099952, blue: 0.9591423869, alpha: 1)
+        layer.borderWidth = 2.0
+        layer.borderColor = #colorLiteral(red: 0.4452409148, green: 0.6250732541, blue: 0.6886933446, alpha: 1)
+        tintColor = UIColor.white
     }
 }

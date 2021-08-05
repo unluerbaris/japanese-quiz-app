@@ -28,11 +28,11 @@ class LessonsViewController: UIViewController {
         quizArray = seeds.getQuizArray()
         quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
         
-        let scrollView = createScrollView()
+        let scrollView = createScrollView(itemHeight: 100, itemSpacing: 20, numberOfColumns: 2)
         generateButtons(
             buttonSpacing: 20,
-            buttonHeight: 80,
-            buttonsTopMargin: 0, // TODO: create margin variable and use it in scrollview size calculation too
+            buttonHeight: 100,
+            buttonWidth: 150,
             quizArray: quizArray,
             scrollView: scrollView
         )
@@ -65,13 +65,13 @@ class LessonsViewController: UIViewController {
     
     //MARK: - Generate UI
     
-    func createScrollView() -> UIScrollView {
+    func createScrollView(itemHeight: Int, itemSpacing: Int, numberOfColumns: Int) -> UIScrollView {
         var scrollViewHeight: Float {
-            return Float(quizArray!.count * 100)
+            return Float(((quizArray!.count * (itemHeight + itemSpacing)) / numberOfColumns) + itemSpacing)
         }
         
         let scrollView = UIScrollView(frame: view.bounds)
-        scrollView.backgroundColor = #colorLiteral(red: 0.2166324556, green: 0.3115530908, blue: 0.4252717495, alpha: 1)
+        scrollView.backgroundColor = #colorLiteral(red: 0.2134302557, green: 0.1230667606, blue: 0.2268092632, alpha: 1)
         view.addSubview(scrollView)
         scrollView.contentSize = CGSize(width: view.frame.size.width, height: CGFloat(scrollViewHeight))
         scrollView.contentInsetAdjustmentBehavior = .always
@@ -79,26 +79,32 @@ class LessonsViewController: UIViewController {
         return scrollView
     }
     
-    func generateButtons(buttonSpacing: Int, buttonHeight: Int, buttonsTopMargin: Int, quizArray: [Quiz]?, scrollView: UIScrollView) {
+    func generateButtons(buttonSpacing: Int, buttonHeight: Int, buttonWidth: Int, quizArray: [Quiz]?, scrollView: UIScrollView) {
         if let safeQuizArray = quizArray {
             
             var buttonYPos = 0
+            var buttonXPos = 0
             var buttonCounter = 0
             
             for quiz in safeQuizArray {
                 
-                buttonYPos = ((buttonHeight + buttonSpacing) * buttonCounter) + buttonsTopMargin
-                let button = TwoLinedButton(frame: CGRect(x: 0, y: buttonYPos, width: 200, height: buttonHeight))
+                if buttonCounter % 2 == 0 {
+                    buttonXPos = Int(view.center.x) - buttonWidth - 10
+                } else {
+                    buttonXPos = Int(view.center.x) + 10
+                }
+                
+                buttonYPos = ((buttonHeight + buttonSpacing) * (buttonCounter / 2)) + buttonSpacing
+                let button = TwoLinedButton(frame: CGRect(x: buttonXPos, y: buttonYPos, width: buttonWidth, height: buttonHeight))
                 
                 scrollView.addSubview(button)
-                button.center.x = view.center.x
                 button.configure(with: TwoLinedButtonViewModel(primaryText: "Quiz \(quiz.quizIndex + 1)", secondaryText: quiz.quizName ?? "Go to Quiz"))
                 
                 button.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
                 
                 if quiz.isSuccessful {
-                    button.layer.borderColor = #colorLiteral(red: 0.2509302795, green: 0.7568549514, blue: 0.78648597, alpha: 1)
-                    button.setTitleColor(#colorLiteral(red: 0.2509302795, green: 0.7568549514, blue: 0.78648597, alpha: 1), for: .normal)
+                    button.layer.borderColor = #colorLiteral(red: 0.6280703545, green: 0.7568953633, blue: 0.7201092839, alpha: 1)
+                    button.setTitleColor(#colorLiteral(red: 0.6280703545, green: 0.7568953633, blue: 0.7201092839, alpha: 1), for: .normal)
                 }
                 
                 buttonCounter += 1
