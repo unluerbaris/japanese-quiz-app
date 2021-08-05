@@ -44,7 +44,7 @@ class QuizViewController: UIViewController {
                 correctScore += 1
             }
             sender.alpha = 0.8
-            sender.backgroundColor = #colorLiteral(red: 0.6280703545, green: 0.7568953633, blue: 0.7201092839, alpha: 0.4698243804)
+            sender.backgroundColor = #colorLiteral(red: 0.5617800355, green: 0.7589344978, blue: 0.5799990296, alpha: 0.9011945914)
         } else {
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.error)
