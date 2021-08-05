@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KFT-Ev-BAs">
-                                <rect key="frame" x="20" y="88" width="374" height="754"/>
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cWX-aj-Hhi" userLabel="Question View">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="364.5"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7zH-q2-QXe" userLabel="Progress Bar">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="6"/>
@@ -31,7 +31,7 @@
                                                 <color key="trackTintColor" name="Accent"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6n-WG-w9b" userLabel="Question Label">
-                                                <rect key="frame" x="0.0" y="20" width="374" height="354.5"/>
+                                                <rect key="frame" x="0.0" y="20" width="374" height="344.5"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,10 +40,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-H3-wwb" userLabel="Answers View">
-                                        <rect key="frame" x="0.0" y="379.5" width="374" height="374.5"/>
+                                        <rect key="frame" x="0.0" y="369.5" width="374" height="364.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlW-Mm-N5A" userLabel="Button A" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="87.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="85"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button">
@@ -54,7 +54,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-bd-s3r" userLabel="Button B" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="95.5" width="374" height="88"/>
+                                                <rect key="frame" x="0.0" y="93" width="374" height="85.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button">
@@ -65,7 +65,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-22-i5a" userLabel="Button C" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="191.5" width="374" height="87.5"/>
+                                                <rect key="frame" x="0.0" y="186.5" width="374" height="85"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button">
@@ -76,7 +76,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trT-My-Y6D" userLabel="Button D" customClass="WhiteBorderButton" customModule="Japanese_Flash_Cards" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="287" width="374" height="87.5"/>
+                                                <rect key="frame" x="0.0" y="279.5" width="374" height="85"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button">
@@ -95,8 +95,8 @@
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="KFT-Ev-BAs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TYi-Fm-n14"/>
-                            <constraint firstItem="KFT-Ev-BAs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XXR-5e-12m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KFT-Ev-BAs" secondAttribute="bottom" constant="20" id="ncf-ic-Qeg"/>
+                            <constraint firstItem="KFT-Ev-BAs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="tNk-2H-PA8"/>
                             <constraint firstItem="KFT-Ev-BAs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tmB-0y-PKU"/>
                         </constraints>
                     </view>
@@ -244,13 +244,13 @@
     <color key="tintColor" name="Accent"/>
     <resources>
         <namedColor name="Accent">
-            <color red="0.62807035450000004" green="0.75689536329999996" blue="0.72010928389999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.62800002098083496" green="0.75700002908706665" blue="0.72000002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Background">
-            <color red="0.21343025569999999" green="0.12306676060000001" blue="0.2268092632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.21299999952316284" green="0.12300000339746475" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Progress">
-            <color red="0.4452409148" green="0.62507325410000003" blue="0.68869334459999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.44499999284744263" green="0.625" blue="0.68900001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
