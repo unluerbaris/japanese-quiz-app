@@ -29,10 +29,21 @@ class LessonsViewController: UIViewController {
         quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
         
         let scrollView = createScrollView(itemHeight: 100, itemSpacing: 20, numberOfColumns: 2)
+        _ = CircularProgressBar(
+                barRadius: 80,
+                lineWidth: 15,
+                xPos: view.center.x,
+                yPos: 120,
+                color: UIColor.red.cgColor,
+                animationDuration: 2,
+                quizArray: quizArray,
+                scrollView: scrollView
+        )
         generateButtons(
             buttonSpacing: 20,
             buttonHeight: 100,
             buttonWidth: 150,
+            topMargin: 250,
             quizArray: quizArray,
             scrollView: scrollView
         )
@@ -79,7 +90,7 @@ class LessonsViewController: UIViewController {
         return scrollView
     }
     
-    func generateButtons(buttonSpacing: Int, buttonHeight: Int, buttonWidth: Int, quizArray: [Quiz]?, scrollView: UIScrollView) {
+    func generateButtons(buttonSpacing: Int, buttonHeight: Int, buttonWidth: Int, topMargin: Int, quizArray: [Quiz]?, scrollView: UIScrollView) {
         if let safeQuizArray = quizArray {
             
             var buttonYPos = 0
@@ -94,7 +105,7 @@ class LessonsViewController: UIViewController {
                     buttonXPos = Int(view.center.x) + 10
                 }
                 
-                buttonYPos = ((buttonHeight + buttonSpacing) * (buttonCounter / 2)) + buttonSpacing
+                buttonYPos = ((buttonHeight + buttonSpacing) * (buttonCounter / 2)) + topMargin
                 let button = TwoLinedButton(frame: CGRect(x: buttonXPos, y: buttonYPos, width: buttonWidth, height: buttonHeight))
                 
                 scrollView.addSubview(button)

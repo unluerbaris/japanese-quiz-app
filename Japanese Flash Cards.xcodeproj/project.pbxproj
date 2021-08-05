@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E903A3E426BBD47500554412 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E903A3E326BBD47500554412 /* CircularProgressBar.swift */; };
 		E914DC7B2698338300788E63 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E914DC7A2698338300788E63 /* LessonsViewController.swift */; };
 		E9763750269B15E900594B4D /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976374F269B15E900594B4D /* Seeds.swift */; };
 		E98571A326AEA97F00F75D97 /* Quiz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985719F26AEA97F00F75D97 /* Quiz+CoreDataClass.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E903A3E326BBD47500554412 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		E914DC7A2698338300788E63 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		E976374F269B15E900594B4D /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		E985719F26AEA97F00F75D97 /* Quiz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				E9D3CB2F269538B100B65BB7 /* WhiteBorderButton.swift */,
 				E9E017EC26A3BF3800AA2A62 /* TwoLinedButton.swift */,
+				E903A3E326BBD47500554412 /* CircularProgressBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				E9D3CB30269538B100B65BB7 /* WhiteBorderButton.swift in Sources */,
 				E9763750269B15E900594B4D /* Seeds.swift in Sources */,
 				E98571A526AEA97F00F75D97 /* Question+CoreDataClass.swift in Sources */,
+				E903A3E426BBD47500554412 /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
