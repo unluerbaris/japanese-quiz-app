@@ -8,7 +8,7 @@
 import UIKit
 
 class CircularProgressBar {
-    init(barRadius: CGFloat, lineWidth: CGFloat, xPos: CGFloat, yPos: CGFloat, color: CGColor, animationDuration: CGFloat, quizArray: [Quiz]?, scrollView: UIScrollView) {
+    init(barRadius: CGFloat, lineWidth: CGFloat, xPos: CGFloat, yPos: CGFloat, color: CGColor, textSize: CGFloat, animationDuration: CGFloat, quizArray: [Quiz]?, scrollView: UIScrollView) {
         var successCount : Int = 0
         var progressAmount : CGFloat = 0
         
@@ -23,8 +23,20 @@ class CircularProgressBar {
             print("quizArray has nil value!")
         }
         
-        let trackPath = UIBezierPath(arcCenter: CGPoint(x: xPos, y: yPos), radius: barRadius, startAngle: -CGFloat.pi / 2, endAngle: ((CGFloat.pi * 3) / 2), clockwise: true)
-        let progressPath = UIBezierPath(arcCenter: CGPoint(x: xPos, y: yPos), radius: barRadius, startAngle: -CGFloat.pi / 2, endAngle: (-CGFloat.pi / 2) + (CGFloat.pi * 2 * progressAmount), clockwise: true)
+        let trackPath = UIBezierPath(
+                arcCenter: CGPoint(x: xPos, y: yPos),
+                radius: barRadius,
+                startAngle: -CGFloat.pi / 2,
+                endAngle: ((CGFloat.pi * 3) / 2),
+                clockwise: true
+        )
+        let progressPath = UIBezierPath(
+                arcCenter: CGPoint(x: xPos, y: yPos),
+                radius: barRadius,
+                startAngle: -CGFloat.pi / 2,
+                endAngle: (-CGFloat.pi / 2) + (CGFloat.pi * 2 * progressAmount),
+                clockwise: true
+        )
         
         let trackLayer = CAShapeLayer()
         trackLayer.path = trackPath.cgPath
@@ -40,8 +52,17 @@ class CircularProgressBar {
         fillLayer.lineCap = CAShapeLayerLineCap.round
         
         fillLayer.strokeEnd = 0
+        
+        let percentageLayer = CATextLayer()
+        percentageLayer.font = UIFont(name: "HelveticaNeue-Bold", size: textSize)
+        percentageLayer.frame = CGRect(x: xPos - barRadius, y: yPos - (barRadius / 3.5), width: barRadius * 2, height: barRadius)
+        percentageLayer.string = "\(Int(100))%"
+        percentageLayer.alignmentMode = CATextLayerAlignmentMode.center
+        percentageLayer.foregroundColor = UIColor.white.cgColor
+        
         scrollView.layer.addSublayer(trackLayer)
         scrollView.layer.addSublayer(fillLayer)
+        scrollView.layer.addSublayer(percentageLayer)
         
         let fillAnimation = CABasicAnimation(keyPath: "strokeEnd")
         fillAnimation.toValue = 1
