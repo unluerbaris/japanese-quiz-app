@@ -10,10 +10,10 @@ import UIKit
 class CircularProgressBar {
     var displayLink: CADisplayLink?
     let percentageLayer: CATextLayer?
-    var animationDuration: CGFloat?
-    var startValue: Double?
-    var endValue: Double?
-    let animationStartDate: Date?
+    var animationDuration: CGFloat
+    var startValue: CGFloat
+    var endValue: CGFloat
+    let animationStartDate: Date
     
     init(barRadius: CGFloat, lineWidth: CGFloat, xPos: CGFloat, yPos: CGFloat, color: CGColor, textSize: CGFloat, totalAnimationDuration: CGFloat, quizArray: [Quiz]?, scrollView: UIScrollView) {
         var successCount : Int = 0
@@ -23,6 +23,7 @@ class CircularProgressBar {
         self.endValue = 0
         self.animationStartDate = Date()
         
+        // Calculate quiz progress and animation duration
         if let safeQuizArray = quizArray {
             for quiz in safeQuizArray {
                 if quiz.isSuccessful {
@@ -30,12 +31,13 @@ class CircularProgressBar {
                 }
             }
             progressAmount = CGFloat(successCount) / CGFloat(safeQuizArray.count)
-            self.endValue = Double(progressAmount * 100)
+            self.endValue = progressAmount * 100
             self.animationDuration = totalAnimationDuration * progressAmount
         } else {
             print("quizArray has nil value!")
         }
         
+        // Create circular progress bar paths
         let trackPath = UIBezierPath(
                 arcCenter: CGPoint(x: xPos, y: yPos),
                 radius: barRadius,
@@ -51,6 +53,7 @@ class CircularProgressBar {
                 clockwise: true
         )
         
+        // Initialize circular progress bar values
         let trackLayer = CAShapeLayer()
         trackLayer.path = trackPath.cgPath
         trackLayer.strokeColor = UIColor.lightGray.cgColor
@@ -66,23 +69,27 @@ class CircularProgressBar {
         
         fillLayer.strokeEnd = 0
         
+        // Create text layer and initialize its values
         percentageLayer = CATextLayer()
         percentageLayer?.font = UIFont(name: "HelveticaNeue-Bold", size: textSize)
         percentageLayer?.frame = CGRect(x: xPos - barRadius, y: yPos - (barRadius / 3.5), width: barRadius * 2, height: barRadius)
-        percentageLayer?.string = "\(Int(progressAmount * 100))%"
+        percentageLayer?.string = "\(Int(0))%"
         percentageLayer?.alignmentMode = CATextLayerAlignmentMode.center
         percentageLayer?.foregroundColor = UIColor.white.cgColor
         
+        // Add sublayers to scroll view
         scrollView.layer.addSublayer(trackLayer)
         scrollView.layer.addSublayer(fillLayer)
         scrollView.layer.addSublayer(percentageLayer!)
         
+        // Counting animation
         displayLink = CADisplayLink(target: self, selector: #selector(handleUpdate))
         displayLink?.add(to: .main, forMode: .default)
         
+        // Circular path fill animation
         let fillAnimation = CABasicAnimation(keyPath: "strokeEnd")
         fillAnimation.toValue = 1
-        fillAnimation.duration = CFTimeInterval(self.animationDuration!)
+        fillAnimation.duration = CFTimeInterval(self.animationDuration)
         fillAnimation.fillMode = CAMediaTimingFillMode.forwards
         fillAnimation.isRemovedOnCompletion = false
         fillLayer.add(fillAnimation, forKey: "fillAnim")
@@ -90,15 +97,15 @@ class CircularProgressBar {
     
     @objc func handleUpdate() {
         let now = Date()
-        let elapsedTime = now.timeIntervalSince(animationStartDate!)
+        let elapsedTime = now.timeIntervalSince(animationStartDate)
         
-        if elapsedTime > CFTimeInterval(animationDuration!) {
-            percentageLayer?.string = "\(Int(endValue!))%"
-            print(endValue!)
+        if elapsedTime > CFTimeInterval(animationDuration) {
+            percentageLayer?.string = "\(Int(endValue))%"
+            print(endValue)
             displayLink?.remove(from: .main, forMode: .default)
         } else {
-            let percentage = elapsedTime / CFTimeInterval(animationDuration!)
-            let value = startValue! + (percentage * (endValue! - startValue!))
+            let percentage = elapsedTime / CFTimeInterval(animationDuration)
+            let value = startValue + (CGFloat(percentage) * (endValue - startValue))
             percentageLayer?.string = "\(Int(value))%"
         }
     }
