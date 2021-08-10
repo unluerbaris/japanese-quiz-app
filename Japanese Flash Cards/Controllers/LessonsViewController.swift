@@ -36,7 +36,7 @@ class LessonsViewController: UIViewController {
                 yPos: 120,
                 color: UIColor.red.cgColor,
                 textSize: 60,
-                animationDuration: 2,
+                totalAnimationDuration: 2,
                 quizArray: quizArray,
                 scrollView: scrollView
         )
