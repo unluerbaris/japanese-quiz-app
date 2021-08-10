@@ -28,10 +28,22 @@ class LessonsViewController: UIViewController {
         quizArray = seeds.getQuizArray()
         quizArray?.sort(by: { $0.quizIndex < $1.quizIndex})
         
-        let scrollView = createScrollView(itemHeight: 100, itemSpacing: 20, numberOfColumns: 2)
+        let buttonHeight = 100
+        let buttonSpacing = 20
+        let buttonWidth = 150
+        let barRadius = 80
+        let lineWidth = 15
+        
+        let scrollView = createScrollView(
+                multipleItemsHeight: buttonHeight,
+                multipleItemsSpacing: buttonSpacing,
+                singleItemHeight: (barRadius + lineWidth) * 2,
+                margin: 40,
+                numberOfColumns: 2
+        )
         _ = CircularProgressBar(
-                barRadius: 80,
-                lineWidth: 15,
+                barRadius: CGFloat(barRadius),
+                lineWidth: CGFloat(lineWidth),
                 xPos: view.center.x,
                 yPos: 120,
                 color: UIColor.red.cgColor,
@@ -41,9 +53,9 @@ class LessonsViewController: UIViewController {
                 scrollView: scrollView
         )
         generateButtons(
-            buttonSpacing: 20,
-            buttonHeight: 100,
-            buttonWidth: 150,
+            buttonSpacing: buttonSpacing,
+            buttonHeight: buttonHeight,
+            buttonWidth: buttonWidth,
             topMargin: 250,
             quizArray: quizArray,
             scrollView: scrollView
@@ -77,9 +89,9 @@ class LessonsViewController: UIViewController {
     
     //MARK: - Generate UI
     
-    func createScrollView(itemHeight: Int, itemSpacing: Int, numberOfColumns: Int) -> UIScrollView {
+    func createScrollView(multipleItemsHeight: Int, multipleItemsSpacing: Int, singleItemHeight: Int, margin: Int, numberOfColumns: Int) -> UIScrollView {
         var scrollViewHeight: Float {
-            return Float(((quizArray!.count * (itemHeight + itemSpacing)) / numberOfColumns) + itemSpacing)
+            return Float(((quizArray!.count * (multipleItemsHeight + multipleItemsSpacing)) / numberOfColumns) + (margin * 2) + singleItemHeight)
         }
         
         let scrollView = UIScrollView(frame: view.bounds)

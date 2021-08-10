@@ -101,7 +101,6 @@ class CircularProgressBar {
         
         if elapsedTime > CFTimeInterval(animationDuration) {
             percentageLayer?.string = "\(Int(endValue))%"
-            print(endValue)
             displayLink?.remove(from: .main, forMode: .default)
         } else {
             let percentage = elapsedTime / CFTimeInterval(animationDuration)
