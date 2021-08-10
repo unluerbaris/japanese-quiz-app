@@ -147,14 +147,16 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfQ-wg-dbH" userLabel="Info Label">
                                         <rect key="frame" x="10" y="0.0" width="394" height="272.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                        <color key="textColor" name="Accent"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-fD-aUp" userLabel="Result Label">
                                         <rect key="frame" x="10" y="272.5" width="394" height="273"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                        <color key="textColor" name="Accent"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaU-8r-u7e" userLabel="Button View">
@@ -166,8 +168,9 @@
                                                     <constraint firstAttribute="height" constant="100" id="iP6-6r-US1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Continue">
-                                                    <color key="titleColor" name="Accent"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="nextButtonPressed:" destination="Kw6-3L-kWG" eventType="touchUpInside" id="xOV-Jh-xfA"/>
@@ -250,7 +253,7 @@
             <color red="0.21299999952316284" green="0.12300000339746475" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Progress">
-            <color red="0.44803696869999998" green="0.42040801049999998" blue="0.57256656890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.44800001382827759" green="0.41999998688697815" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
