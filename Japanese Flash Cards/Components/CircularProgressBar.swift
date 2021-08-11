@@ -15,7 +15,7 @@ class CircularProgressBar {
     var endValue: CGFloat
     let animationStartDate: Date
     
-    init(barRadius: CGFloat, lineWidth: CGFloat, xPos: CGFloat, yPos: CGFloat, color: CGColor, textSize: CGFloat, animationDuration: CGFloat, progressAmount: CGFloat, scrollView: UIScrollView) {
+    init(barRadius: CGFloat, lineWidth: CGFloat, xPos: CGFloat, yPos: CGFloat, color: CGColor, textSize: CGFloat, animationDuration: CGFloat, progressAmount: CGFloat, selectedView: UIView) {
        
         self.animationDuration = animationDuration
         self.startValue = 0
@@ -63,9 +63,9 @@ class CircularProgressBar {
         percentageLayer?.foregroundColor = UIColor.white.cgColor
         
         // Add sublayers to scroll view
-        scrollView.layer.addSublayer(trackLayer)
-        scrollView.layer.addSublayer(fillLayer)
-        scrollView.layer.addSublayer(percentageLayer!)
+        selectedView.layer.addSublayer(trackLayer)
+        selectedView.layer.addSublayer(fillLayer)
+        selectedView.layer.addSublayer(percentageLayer!)
         
         // Counting animation
         displayLink = CADisplayLink(target: self, selector: #selector(handleUpdate))

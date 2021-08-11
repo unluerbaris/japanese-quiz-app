@@ -145,20 +145,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qLf-yj-tKu" userLabel="Result View">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfQ-wg-dbH" userLabel="Info Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfQ-wg-dbH" userLabel="Info Label">
                                         <rect key="frame" x="10" y="0.0" width="394" height="272.5"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-fD-aUp" userLabel="Result Label">
-                                        <rect key="frame" x="10" y="272.5" width="394" height="273"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruk-9V-6P4" userLabel="ProgressBarView">
+                                        <rect key="frame" x="0.0" y="272.5" width="414" height="273"/>
+                                        <color key="backgroundColor" name="Background"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaU-8r-u7e" userLabel="Button View">
                                         <rect key="frame" x="0.0" y="545.5" width="414" height="272.5"/>
                                         <subviews>
@@ -186,12 +184,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="5Hs-fD-aUp" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" constant="10" id="2dd-1g-Jnv"/>
-                                    <constraint firstAttribute="trailing" secondItem="5Hs-fD-aUp" secondAttribute="trailing" constant="10" id="68T-I8-l2f"/>
+                                    <constraint firstAttribute="trailing" secondItem="ruk-9V-6P4" secondAttribute="trailing" id="8SH-hT-gW3"/>
                                     <constraint firstItem="mfQ-wg-dbH" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" constant="10" id="JLw-iP-1Mx"/>
                                     <constraint firstAttribute="trailing" secondItem="jaU-8r-u7e" secondAttribute="trailing" id="Swo-4G-5u7"/>
                                     <constraint firstAttribute="trailing" secondItem="mfQ-wg-dbH" secondAttribute="trailing" constant="10" id="TTX-L6-Pra"/>
-                                    <constraint firstItem="jaU-8r-u7e" firstAttribute="top" secondItem="5Hs-fD-aUp" secondAttribute="bottom" id="WPa-dD-a8X"/>
+                                    <constraint firstItem="ruk-9V-6P4" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" id="akh-Xu-mR1"/>
                                     <constraint firstAttribute="bottom" secondItem="jaU-8r-u7e" secondAttribute="bottom" id="rfO-ci-z9X"/>
                                     <constraint firstItem="jaU-8r-u7e" firstAttribute="leading" secondItem="qLf-yj-tKu" secondAttribute="leading" id="yzO-31-lr5"/>
                                 </constraints>
@@ -208,7 +205,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="resultLabel" destination="5Hs-fD-aUp" id="dAh-Wj-iCS"/>
+                        <outlet property="infoLabel" destination="mfQ-wg-dbH" id="5DP-7U-Znd"/>
+                        <outlet property="progressBarView" destination="ruk-9V-6P4" id="aIi-Va-xxw"/>
                         <segue destination="s9h-jz-AqS" kind="presentation" identifier="goToLessonsMenu" modalPresentationStyle="fullScreen" id="eZ7-1F-Ymw"/>
                     </connections>
                 </viewController>

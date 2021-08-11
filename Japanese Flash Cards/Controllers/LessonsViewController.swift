@@ -60,11 +60,11 @@ class LessonsViewController: UIViewController {
                 lineWidth: CGFloat(lineWidth),
                 xPos: view.center.x,
                 yPos: 120,
-                color: UIColor.red.cgColor,
+                color: UIColor.systemTeal.cgColor,
                 textSize: 60,
                 animationDuration: 2 * barProgressAmount,
                 progressAmount: barProgressAmount,
-                scrollView: scrollView
+                selectedView: scrollView
         )
         generateButtons(
             buttonSpacing: buttonSpacing,
