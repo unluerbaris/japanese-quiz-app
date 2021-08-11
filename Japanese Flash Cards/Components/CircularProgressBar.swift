@@ -15,27 +15,12 @@ class CircularProgressBar {
     var endValue: CGFloat
     let animationStartDate: Date
     
-    init(barRadius: CGFloat, lineWidth: CGFloat, xPos: CGFloat, yPos: CGFloat, color: CGColor, textSize: CGFloat, totalAnimationDuration: CGFloat, quizArray: [Quiz]?, scrollView: UIScrollView) {
-        var successCount : Int = 0
-        var progressAmount : CGFloat = 0
-        self.animationDuration = 0
+    init(barRadius: CGFloat, lineWidth: CGFloat, xPos: CGFloat, yPos: CGFloat, color: CGColor, textSize: CGFloat, animationDuration: CGFloat, progressAmount: CGFloat, scrollView: UIScrollView) {
+       
+        self.animationDuration = animationDuration
         self.startValue = 0
-        self.endValue = 0
+        self.endValue = progressAmount * 100
         self.animationStartDate = Date()
-        
-        // Calculate quiz progress and animation duration
-        if let safeQuizArray = quizArray {
-            for quiz in safeQuizArray {
-                if quiz.isSuccessful {
-                    successCount += 1
-                }
-            }
-            progressAmount = CGFloat(successCount) / CGFloat(safeQuizArray.count)
-            self.endValue = progressAmount * 100
-            self.animationDuration = totalAnimationDuration * progressAmount
-        } else {
-            print("quizArray has nil value!")
-        }
         
         // Create circular progress bar paths
         let trackPath = UIBezierPath(
@@ -89,7 +74,7 @@ class CircularProgressBar {
         // Circular path fill animation
         let fillAnimation = CABasicAnimation(keyPath: "strokeEnd")
         fillAnimation.toValue = 1
-        fillAnimation.duration = CFTimeInterval(self.animationDuration)
+        fillAnimation.duration = CFTimeInterval(animationDuration)
         fillAnimation.fillMode = CAMediaTimingFillMode.forwards
         fillAnimation.isRemovedOnCompletion = false
         fillLayer.add(fillAnimation, forKey: "fillAnim")

@@ -33,6 +33,20 @@ class LessonsViewController: UIViewController {
         let buttonWidth = 150
         let barRadius = 80
         let lineWidth = 15
+        var successCount = 0
+        var barProgressAmount: CGFloat = 0
+        
+        // Calculate quiz progress
+        if let safeQuizArray = quizArray {
+            for quiz in safeQuizArray {
+                if quiz.isSuccessful {
+                    successCount += 1
+                }
+            }
+            barProgressAmount = CGFloat(successCount) / CGFloat(safeQuizArray.count)
+        } else {
+            print("quizArray has nil value!")
+        }
         
         let scrollView = createScrollView(
                 multipleItemsHeight: buttonHeight,
@@ -48,8 +62,8 @@ class LessonsViewController: UIViewController {
                 yPos: 120,
                 color: UIColor.red.cgColor,
                 textSize: 60,
-                totalAnimationDuration: 2,
-                quizArray: quizArray,
+                animationDuration: 2 * barProgressAmount,
+                progressAmount: barProgressAmount,
                 scrollView: scrollView
         )
         generateButtons(
